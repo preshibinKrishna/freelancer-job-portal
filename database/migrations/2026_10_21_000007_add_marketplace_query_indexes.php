@@ -23,16 +23,16 @@ return new class extends Migration
         });
 
         Schema::table('conversation_participants', function (Blueprint $table): void {
-            $table->dropIndex(['user_id', 'archived_at', 'last_read_at']);
             $table->index(['user_id', 'archived_at', 'conversation_id', 'last_read_at'], 'conversation_participants_user_inbox_index');
+            $table->dropIndex(['user_id', 'archived_at', 'last_read_at']);
         });
     }
 
     public function down(): void
     {
         Schema::table('conversation_participants', function (Blueprint $table): void {
-            $table->dropIndex('conversation_participants_user_inbox_index');
             $table->index(['user_id', 'archived_at', 'last_read_at']);
+            $table->dropIndex('conversation_participants_user_inbox_index');
         });
 
         Schema::table('recruitment_interviews', function (Blueprint $table): void {
