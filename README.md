@@ -1,6 +1,6 @@
 # M Talent
 
-M Talent is a technology talent marketplace by Bitaxa Technologies LLP. The application uses Laravel, PHP 8.3+, MySQL, Blade, Tailwind, Vite, Alpine, and Pest.
+MTalent is a technology talent marketplace. The application uses Laravel, PHP 8.3+, MySQL, Blade, Tailwind, Vite, Alpine, and Pest.
 
 ## Local setup
 

@@ -2,7 +2,7 @@
 
 ## Product vision
 
-M Talent is a premium technology-talent marketplace operated by Bitaxa Technologies LLP. It connects employers with verified technology professionals for permanent roles, contract work, and project engagements. The experience should feel focused, trusted, and calm—not like a high-volume classifieds portal.
+MTalent is a premium technology-talent marketplace. It connects employers with verified technology professionals for permanent roles, contract work, and project engagements. The experience should feel focused, trusted, and calm—not like a high-volume classifieds portal.
 
 Initial go-to-market serves Kerala technology ecosystems (Technopark, Infopark, Cyberpark and surrounding companies); the domain model, language, currency, location, and compliance design must support expansion from Kerala to India and globally.
 
