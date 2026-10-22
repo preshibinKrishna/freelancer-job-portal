@@ -123,7 +123,7 @@ return new class extends Migration
             $table->json('metadata')->nullable();
             $table->timestamp('attempted_at')->nullable();
             $table->timestamps();
-            $table->unique(['billing_transaction_id', 'attempt_number']);
+            $table->unique(['billing_transaction_id', 'attempt_number'], 'billing_attempt_transaction_number_unique');
         });
 
         Schema::create('billing_audit_entries', function (Blueprint $table): void {

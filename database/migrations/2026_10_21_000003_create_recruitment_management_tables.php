@@ -31,7 +31,7 @@ return new class extends Migration
             $table->string('status', 20)->default('submitted')->index();
             $table->timestamp('submitted_at');
             $table->timestamps();
-            $table->index(['assigned_recruiter_id', 'status', 'created_at']);
+            $table->index(['assigned_recruiter_id', 'status', 'created_at'], 'recruitment_recruiter_status_created_idx');
             $table->index(['company_id', 'status', 'created_at']);
         });
 
@@ -53,8 +53,8 @@ return new class extends Migration
             $table->timestamp('added_at');
             $table->timestamp('placed_at')->nullable();
             $table->timestamps();
-            $table->unique(['recruitment_request_id', 'candidate_id']);
-            $table->index(['recruitment_request_id', 'stage', 'created_at']);
+            $table->unique(['recruitment_request_id', 'candidate_id'], 'recruitment_pipeline_candidate_unique');
+            $table->index(['recruitment_request_id', 'stage', 'created_at'], 'recruitment_pipeline_stage_created_idx');
             $table->index(['candidate_id', 'created_at']);
         });
 
@@ -66,7 +66,7 @@ return new class extends Migration
             $table->string('to_stage', 24);
             $table->text('note')->nullable();
             $table->timestamp('created_at');
-            $table->index(['pipeline_entry_id', 'created_at']);
+            $table->index(['pipeline_entry_id', 'created_at'], 'pipeline_stage_changes_created_idx');
         });
 
         Schema::create('recruitment_interviews', function (Blueprint $table): void {

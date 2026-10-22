@@ -65,7 +65,7 @@ return new class extends Migration
             $table->string('from_status', 20);
             $table->string('to_status', 20);
             $table->timestamp('created_at');
-            $table->index(['contract_milestone_id', 'created_at']);
+            $table->index(['contract_milestone_id', 'created_at'], 'contract_milestone_status_created_idx');
         });
     }
 

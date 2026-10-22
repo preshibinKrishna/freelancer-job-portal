@@ -59,8 +59,8 @@ return new class extends Migration
             $table->boolean('is_visible')->default(true);
             $table->boolean('is_featured')->default(false);
             $table->timestamps();
-            $table->index(['freelancer_profile_id', 'project_category_id']);
-            $table->index(['requested_company_id', 'verification_status']);
+            $table->index(['freelancer_profile_id', 'project_category_id'], 'freelancer_projects_profile_category_idx');
+            $table->index(['requested_company_id', 'verification_status'], 'freelancer_projects_company_verification_idx');
         });
 
         Schema::create('freelancer_reviews', function (Blueprint $table): void {

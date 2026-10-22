@@ -50,7 +50,7 @@ return new class extends Migration
             $table->string('mime_type', 120);
             $table->unsignedBigInteger('size_bytes');
             $table->timestamps();
-            $table->index(['engagement_project_id', 'created_at']);
+            $table->index(['engagement_project_id', 'created_at'], 'eng_project_attachments_created_idx');
         });
 
         Schema::create('saved_engagement_projects', function (Blueprint $table): void {
@@ -74,7 +74,7 @@ return new class extends Migration
             $table->timestamp('withdrawn_at')->nullable();
             $table->timestamps();
             $table->unique(['engagement_project_id', 'freelancer_id']);
-            $table->index(['engagement_project_id', 'status', 'submitted_at']);
+            $table->index(['engagement_project_id', 'status', 'submitted_at'], 'proj_proposals_project_status_submitted_idx');
             $table->index(['freelancer_id', 'status', 'created_at']);
         });
 
@@ -107,7 +107,7 @@ return new class extends Migration
             $table->string('status', 20)->default('pending');
             $table->timestamp('completed_at')->nullable();
             $table->timestamps();
-            $table->index(['engagement_project_id', 'position']);
+            $table->index(['engagement_project_id', 'position'], 'eng_project_milestones_position_idx');
         });
 
         Schema::create('project_messages', function (Blueprint $table): void {
@@ -127,7 +127,7 @@ return new class extends Migration
             $table->string('from_status', 24);
             $table->string('to_status', 24);
             $table->timestamp('created_at');
-            $table->index(['engagement_project_id', 'created_at']);
+            $table->index(['engagement_project_id', 'created_at'], 'eng_project_status_changes_created_idx');
         });
 
         Schema::create('project_proposal_status_changes', function (Blueprint $table): void {
@@ -137,7 +137,7 @@ return new class extends Migration
             $table->string('from_status', 24);
             $table->string('to_status', 24);
             $table->timestamp('created_at');
-            $table->index(['project_proposal_id', 'created_at']);
+            $table->index(['project_proposal_id', 'created_at'], 'project_proposal_status_created_idx');
         });
     }
 
