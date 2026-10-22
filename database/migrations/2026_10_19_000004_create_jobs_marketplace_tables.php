@@ -89,7 +89,7 @@ return new class extends Migration
             $table->string('to_status', 24);
             $table->text('note')->nullable();
             $table->timestamp('created_at')->useCurrent();
-            $table->index(['job_application_id', 'created_at']);
+            $table->index(['job_application_id', 'created_at'], 'job_app_status_created_idx');
         });
 
         Schema::create('notifications', function (Blueprint $table): void {
