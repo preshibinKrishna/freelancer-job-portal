@@ -1,0 +1,2 @@
+@props(['tone' => 'neutral']) @php($tones = ['neutral' => 'bg-slate-100 text-ink-700', 'brand' => 'bg-brand-100 text-brand-700', 'success' => 'bg-success-100 text-success-700', 'warning' => 'bg-warning-100 text-warning-700', 'danger' => 'bg-danger-100 text-danger-700'])
+<span {{ $attributes->class(['inline-flex items-center gap-1 rounded-sm px-2 py-1 text-xs font-semibold', $tones[$tone] ?? $tones['neutral']]) }}>{{ $slot }}</span>

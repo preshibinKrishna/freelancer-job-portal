@@ -1,0 +1,36 @@
+<x-layouts.app :title="$company->name.' · M Talent'" :canonical="$canonical" :description="$description" :robots="$indexable ? 'index,follow' : 'noindex,follow'" ogType="website" :structuredData="$structuredData" :image="$indexable && $company->logo_path ? \Illuminate\Support\Facades\Storage::disk('public')->url($company->logo_path) : null" :imageAlt="$company->name">
+    <header class="border-b border-line bg-white"><div class="mx-auto flex min-h-16 max-w-6xl items-center justify-between px-4 sm:px-6"><a href="{{ route('home') }}" class="flex items-center gap-2 font-semibold text-ink-950"><span class="grid size-8 place-items-center rounded-md bg-brand-700 text-white">M</span>M Talent</a><a class="text-sm font-semibold text-brand-700 hover:underline" href="{{ route('login') }}">Sign in</a></div></header>
+    <main id="main-content" class="mx-auto max-w-6xl px-4 pb-16 sm:px-6">
+        <div class="relative mt-6 h-44 overflow-hidden rounded-xl border border-line bg-gradient-to-br from-brand-100 via-white to-slate-100 sm:mt-8 sm:h-64">@if($company->cover_image_path)<img src="{{ \Illuminate\Support\Facades\Storage::disk('public')->url($company->cover_image_path) }}" alt="" class="size-full object-cover">@else<div class="absolute inset-0 opacity-50" aria-hidden="true"><div class="absolute -right-10 -top-16 size-64 rounded-full border-[36px] border-white/70"></div><div class="absolute -bottom-36 left-1/4 size-80 rounded-full border-[50px] border-brand-100"></div></div>@endif</div>
+        <div class="pt-5"><x-seo.breadcrumbs :items="[['label' => 'Home', 'url' => route('home')], ['label' => 'Companies'], ['label' => $company->name]]"/></div>
+        <section class="relative -mt-10 px-2 sm:-mt-12 sm:px-6" aria-labelledby="company-name">
+            <div class="flex flex-col items-start gap-5 sm:flex-row sm:items-end">
+                <x-company-logo :name="$company->name" size="lg" class="!size-24 !rounded-xl bg-white shadow-float sm:!size-28" :src="$company->logo_path ? \Illuminate\Support\Facades\Storage::disk('public')->url($company->logo_path) : null"/>
+                <div class="min-w-0 flex-1 pb-1"><div class="flex flex-wrap items-center gap-2"><h1 id="company-name" class="text-3xl font-semibold tracking-tight text-ink-950 sm:text-4xl">{{ $company->name }}</h1>@if($company->verification_status === \App\Enums\CompanyVerificationStatus::Verified)<x-company-verification-badge :status="$company->verification_status"/>@endif</div><p class="mt-2 text-base text-ink-600">{{ $company->industry }}</p></div>
+            </div>
+        </section>
+
+        <div class="mt-10 grid gap-8 lg:grid-cols-[minmax(0,1fr)_20rem]">
+            <div class="space-y-8">
+                @if($company->description)<section aria-labelledby="about-company"><h2 id="about-company" class="text-xl font-semibold text-ink-950">About {{ $company->name }}</h2><p class="mt-4 whitespace-pre-line text-base leading-8 text-ink-700">{{ $company->description }}</p></section>@endif
+                @if($company->openJobs->isNotEmpty())<section class="border-t border-line pt-7" aria-labelledby="company-open-jobs"><div class="flex flex-wrap items-end justify-between gap-3"><div><p class="bt-eyebrow">Join the team</p><h2 id="company-open-jobs" class="mt-1 text-xl font-semibold text-ink-950">Open roles</h2></div><a href="{{ route('jobs.index', ['q' => $company->name]) }}" class="text-sm font-semibold text-brand-700 hover:underline">Explore all jobs</a></div><ul class="mt-4 space-y-3">@foreach($company->openJobs as $job)<li><x-job-card :job="$job"/></li>@endforeach</ul></section>@endif
+                @if($company->company_culture)<section class="border-t border-line pt-7" aria-labelledby="company-culture"><h2 id="company-culture" class="text-xl font-semibold text-ink-950">How we work</h2><p class="mt-4 whitespace-pre-line text-base leading-8 text-ink-700">{{ $company->company_culture }}</p></section>@endif
+                @if($company->benefits !== [])<section class="border-t border-line pt-7" aria-labelledby="company-benefits"><h2 id="company-benefits" class="text-xl font-semibold text-ink-950">Benefits and support</h2><ul class="mt-4 grid gap-3 sm:grid-cols-2">@foreach($company->benefits as $benefit)<li class="flex items-start gap-3 rounded-lg border border-line bg-white p-4 text-sm leading-6 text-ink-700"><span class="mt-0.5 text-brand-700" aria-hidden="true">✓</span><span>{{ $benefit }}</span></li>@endforeach</ul></section>@endif
+                @if($company->technology_stack !== [])<section class="border-t border-line pt-7" aria-labelledby="company-technology"><h2 id="company-technology" class="text-xl font-semibold text-ink-950">Technology</h2><ul class="mt-4 flex flex-wrap gap-2">@foreach($company->technology_stack as $technology)<li><x-badge tone="neutral">{{ $technology }}</x-badge></li>@endforeach</ul></section>@endif
+            </div>
+            <aside class="h-fit rounded-xl border border-line bg-white p-5 shadow-card sm:p-6" aria-labelledby="company-facts">
+                <h2 id="company-facts" class="text-base font-semibold text-ink-950">Company at a glance</h2>
+                <dl class="mt-5 space-y-4 text-sm">
+                    @if($company->company_size)<div><dt class="text-ink-500">Company size</dt><dd class="mt-1 font-medium text-ink-950">{{ $company->company_size->label() }}</dd></div>@endif
+                    @if($company->founded_year)<div><dt class="text-ink-500">Founded</dt><dd class="mt-1 font-medium text-ink-950">{{ $company->founded_year }}</dd></div>@endif
+                    @if($company->headquarters)<div><dt class="text-ink-500">Headquarters</dt><dd class="mt-1 font-medium text-ink-950">{{ $company->headquarters->name }}@if($company->headquarters->parent), {{ $company->headquarters->parent->name }}@endif</dd></div>@endif
+                    @if($company->itPark)<div><dt class="text-ink-500">Technology hub</dt><dd class="mt-1 font-medium text-ink-950">{{ $company->itPark->name }}</dd></div>@endif
+                    @if($company->officeLocations->isNotEmpty())<div><dt class="text-ink-500">Office locations</dt><dd class="mt-1 font-medium text-ink-950">{{ $company->officeLocations->pluck('name')->join(', ') }}</dd></div>@endif
+                    @if($company->website)<div><dt class="text-ink-500">Website</dt><dd class="mt-1"><a class="break-all font-medium text-brand-700 hover:underline" href="{{ $company->website }}" rel="nofollow noopener noreferrer" target="_blank">{{ parse_url($company->website, PHP_URL_HOST) }}</a></dd></div>@endif
+                </dl>
+                @if($company->social_links !== [])<div class="mt-6 border-t border-line pt-5"><h3 class="text-sm font-semibold text-ink-950">Follow {{ $company->name }}</h3><ul class="mt-3 flex flex-wrap gap-3">@foreach($company->social_links as $platform => $url)<li><a class="text-sm font-medium capitalize text-brand-700 hover:underline" href="{{ $url }}" target="_blank" rel="nofollow noopener noreferrer">{{ $platform }}</a></li>@endforeach</ul></div>@endif
+            </aside>
+        </div>
+        <footer class="mt-14 border-t border-line pt-6 text-xs leading-5 text-ink-500">Company information is provided by the organization. M Talent verification, when shown, indicates platform review of the company’s submitted information.</footer>
+    </main>
+</x-layouts.app>

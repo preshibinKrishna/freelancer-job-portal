@@ -1,0 +1,2 @@
+@props(['title', 'description' => null])
+<div {{ $attributes->class(['rounded-xl border border-dashed bg-surface px-6 py-10 text-center sm:py-12']) }}><div class="mx-auto mb-4 grid size-10 place-items-center rounded-full border border-line bg-slate-50 text-sm font-semibold text-ink-500" aria-hidden="true">i</div><h3 class="text-base font-semibold text-ink-950">{{ $title }}</h3>@if($description)<p class="mx-auto mt-1 max-w-md text-sm leading-6 text-ink-500">{{ $description }}</p>@endif@if(isset($action))<div class="mt-5">{{ $action }}</div>@endif</div>

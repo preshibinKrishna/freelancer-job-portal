@@ -1,0 +1,47 @@
+@import 'tailwindcss';
+@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
+@source '../../storage/framework/views/*.php';
+@theme { --font-sans: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; --color-ink-950: #121923; --color-ink-700: #354153; --color-ink-600: #515d70; --color-ink-500: #687386; --color-ink-400: #8b95a4; --color-ink-300: #adb5c0; --color-canvas: #f7f8fa; --color-surface: #fff; --color-line: #e3e7ed; --color-brand-700: #075a55; --color-brand-600: #087c74; --color-brand-100: #d9f3ee; --color-brand-50: #eff9f6; --color-success-700: #166534; --color-success-100: #dcfce7; --color-warning-700: #92400e; --color-warning-100: #fef3c7; --color-danger-700: #b42318; --color-danger-100: #fee4e2; --shadow-float: 0 12px 30px rgb(18 25 35 / .10), 0 2px 6px rgb(18 25 35 / .05); --shadow-card: 0 1px 2px rgb(18 25 35 / .04); }
+@layer base { [x-cloak] { display: none !important; } html { scroll-behavior: smooth; } body { @apply bg-canvas font-sans text-ink-950 antialiased; text-rendering: optimizeLegibility; } * { @apply border-line; } :focus-visible { @apply outline-2 outline-offset-2 outline-brand-600; } ::selection { @apply bg-brand-100 text-ink-950; } button, a, input, select, textarea, summary { -webkit-tap-highlight-color: transparent; } button:not(:disabled), summary { cursor: pointer; } button:disabled { cursor: not-allowed; } [aria-busy='true'] { cursor: progress; } @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } *, ::before, ::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; scroll-behavior: auto !important; transition-duration: .01ms !important; } } }
+@layer components { .bt-shell { @apply mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8; } .bt-section { @apply py-10 sm:py-14; } .bt-eyebrow { @apply text-xs font-semibold tracking-[.14em] text-brand-700 uppercase; } .bt-label { @apply mb-1.5 block text-sm font-medium text-ink-700; } .bt-field { @apply block min-h-11 w-full rounded-md border bg-surface px-3 py-2.5 text-sm text-ink-950 shadow-sm placeholder:text-ink-500 transition-[border-color,box-shadow] focus:border-brand-600 focus:ring-3 focus:ring-brand-100 disabled:cursor-not-allowed disabled:bg-slate-50; } .bt-help { @apply mt-1.5 text-sm text-ink-500; } .bt-error { @apply mt-1.5 text-sm text-danger-700; } .bt-card { @apply rounded-xl border bg-surface shadow-sm; } .bt-tab { @apply border-b-2 border-transparent px-1 py-3 text-sm font-medium text-ink-500 transition hover:text-ink-950; } .bt-tab[aria-selected='true'] { @apply border-brand-600 text-brand-700; } .bt-skeleton { @apply animate-pulse rounded-md bg-slate-200; } .bt-button-primary { @apply inline-flex min-h-11 items-center justify-center rounded-md bg-brand-700 px-4 py-2 text-sm font-semibold text-white transition hover:bg-brand-600 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-700 disabled:pointer-events-none disabled:opacity-50; } .bt-button-secondary { @apply inline-flex min-h-11 items-center justify-center rounded-md border border-line bg-white px-4 py-2 text-sm font-semibold text-ink-700 transition hover:bg-slate-50 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-700; } .bt-button-danger { @apply inline-flex min-h-11 items-center justify-center rounded-md border border-danger-100 bg-white px-4 py-2 text-sm font-semibold text-danger-700 transition hover:bg-danger-100 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-danger-700; } }
+
+@layer components {
+    .bt-home-hero { background: linear-gradient(180deg, #fbfcfc 0%, #fff 92%); }
+    .bt-home-section { padding-block: 4rem; }
+    .bt-display { font-size: clamp(2.75rem, 5.1vw, 4.45rem); }
+    .bt-section-title { font-size: clamp(1.9rem, 3.5vw, 2.75rem); line-height: 1.12; font-weight: 600; letter-spacing: -.045em; }
+    .bt-hero-orbit { position: absolute; right: -9rem; top: -13rem; width: 46rem; height: 46rem; border: 1px solid rgb(8 124 116 / .055); border-radius: 50%; }
+    .bt-hero-orbit-two { right: -2rem; top: -8rem; width: 32rem; height: 32rem; border-color: rgb(8 124 116 / .045); }
+    .bt-network-panel { background-image: linear-gradient(140deg, rgb(248 251 250 / .92), white 42%); }
+    .bt-search-shell { box-shadow: 0 18px 45px rgb(18 25 35 / .075), 0 2px 7px rgb(18 25 35 / .035); }
+    .bt-search-chip { border: 1px solid #e3e7ed; border-radius: 999px; padding: .35rem .65rem; color: #354153; transition: color .16s ease, border-color .16s ease, background-color .16s ease; }
+    .bt-search-chip:hover { border-color: #a8d4cc; background: #f4faf8; color: #075a55; }
+    .bt-pathway { display: block; padding-block: 1.5rem; }
+    .bt-pathway-index { color: #687386; font-size: .7rem; font-weight: 600; letter-spacing: .12em; }
+    .bt-pathway-arrow { flex: none; color: #687386; transition: color .16s ease, transform .16s ease; }
+    .bt-pathway:hover .bt-pathway-arrow { color: #087c74; transform: translate(2px, -2px); }
+    .bt-person-card { min-width: 0; border-top: 1px solid #e3e7ed; padding-top: 1.25rem; }
+    .bt-company-link { display: flex; min-width: 0; align-items: center; gap: .8rem; border: 1px solid #e3e7ed; border-radius: .75rem; padding: .9rem; transition: border-color .16s ease, background-color .16s ease; }
+    .bt-company-link:hover { border-color: #b9d9d3; background: #fbfdfc; }
+    .bt-steps { position: relative; }
+    .bt-step { border-top: 1px solid #dce3e5; padding-top: 1rem; }
+    .bt-step-number { display: inline-grid; width: 2.25rem; height: 2.25rem; place-items: center; border: 1px solid #b9d9d3; border-radius: 50%; background: white; color: #075a55; font-size: .75rem; font-weight: 600; }
+    .bt-region-panel { position: relative; overflow: hidden; border: 1px solid #e3e7ed; border-radius: 1rem; background: white; padding: 1.4rem; box-shadow: 0 10px 30px rgb(18 25 35 / .04); }
+    .bt-region-lines { position: absolute; top: 8.2rem; left: 17%; right: 17%; height: 1px; background: #d5e5e2; }
+    .bt-region-lines span { position: absolute; top: -2px; width: 5px; height: 5px; border-radius: 50%; background: #087c74; }
+    .bt-region-lines span:nth-child(1) { left: 0; }
+    .bt-region-lines span:nth-child(2) { left: 50%; }
+    .bt-region-lines span:nth-child(3) { right: 0; }
+    .bt-region-dot { position: relative; z-index: 1; display: inline-block; width: .65rem; height: .65rem; border: 2px solid white; border-radius: 50%; background: #087c74; box-shadow: 0 0 0 1px #9ac9c0; }
+    .bt-cta-panel { border-radius: 1rem; padding: 1.5rem; }
+    .bt-cta-light, .bt-cta-outline { display: inline-flex; min-height: 2.75rem; align-items: center; justify-content: center; gap: .45rem; border-radius: .4rem; padding: .65rem 1rem; font-size: .875rem; font-weight: 600; transition: background-color .16s ease, color .16s ease; }
+    .bt-cta-light { background: white; color: #075a55; }
+    .bt-cta-light:hover { background: #e9f5f2; }
+    .bt-cta-outline { border: 1px solid rgb(255 255 255 / .35); color: white; }
+    .bt-cta-outline:hover { background: rgb(255 255 255 / .1); }
+    @media (min-width: 640px) {
+        .bt-home-section { padding-block: 5rem; }
+        .bt-cta-panel { padding: 2rem; }
+        .bt-region-panel { padding: 1.75rem; }
+    }
+}

@@ -1,0 +1,4 @@
+@props(['variant' => 'primary', 'size' => 'md', 'type' => 'button', 'loading' => false])
+@php($styles = ['primary' => 'bg-brand-700 text-white hover:bg-brand-600', 'secondary' => 'border border-line bg-surface text-ink-950 hover:bg-slate-50', 'quiet' => 'text-ink-700 hover:bg-slate-100', 'danger' => 'bg-danger-700 text-white hover:bg-red-800'])
+@php($sizes = ['sm' => 'min-h-9 px-3 text-sm', 'md' => 'min-h-11 px-4 text-sm', 'lg' => 'min-h-12 px-5 text-base'])
+<button type="{{ $type }}" {{ $attributes->class(['inline-flex items-center justify-center gap-2 rounded-md font-semibold transition disabled:opacity-50', $styles[$variant] ?? $styles['primary'], $sizes[$size] ?? $sizes['md']])->merge(['disabled' => $loading, 'aria-busy' => $loading ? 'true' : 'false']) }}>@if($loading)<span class="size-4 animate-spin rounded-full border-2 border-current border-t-transparent" aria-hidden="true"></span>@endif{{ $slot }}</button>

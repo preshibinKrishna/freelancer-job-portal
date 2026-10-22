@@ -1,0 +1,2 @@
+@props(['name', 'size' => 'md']) @php($sizes=['sm'=>'size-8 text-xs','md'=>'size-10 text-sm','lg'=>'size-14 text-lg'])
+<div {{ $attributes->class(['inline-flex shrink-0 items-center justify-center rounded-full bg-brand-100 font-semibold text-brand-700',$sizes[$size] ?? $sizes['md']]) }} aria-label="{{ $name }}">{{ str($name)->explode(' ')->map(fn($word) => str($word)->substr(0,1))->join('')->substr(0,2)->upper() }}</div>

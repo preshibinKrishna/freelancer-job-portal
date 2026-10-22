@@ -1,0 +1,3 @@
+@props(['label' => null, 'hint' => null, 'error' => null, 'id' => null])
+@php($fieldId = $id ?? $attributes->get('name'))
+<div>@if($label)<label class="bt-label" for="{{ $fieldId }}">{{ $label }}</label>@endif<input id="{{ $fieldId }}" {{ $attributes->class(['bt-field', 'border-danger-700 focus:border-danger-700 focus:ring-danger-100' => $error]) }} @if($error) aria-invalid="true" @endif @if($error || $hint) aria-describedby="{{ $error ? $fieldId.'-error' : '' }}{{ $error && $hint ? ' ' : '' }}{{ $hint ? $fieldId.'-hint' : '' }}" @endif>@if($error)<p class="bt-error" id="{{ $fieldId }}-error">{{ $error }}</p>@endif @if($hint)<p class="bt-help" id="{{ $fieldId }}-hint">{{ $hint }}</p>@endif</div>

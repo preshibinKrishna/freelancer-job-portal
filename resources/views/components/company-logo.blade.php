@@ -1,0 +1,2 @@
+@props(['name', 'size' => 'md', 'src' => null]) @php($sizes=['sm'=>'size-9 text-xs','md'=>'size-12 text-sm','lg'=>'size-16 text-base'])
+<div {{ $attributes->class(['inline-flex shrink-0 items-center justify-center overflow-hidden rounded-md border bg-surface font-bold text-ink-700',$sizes[$size] ?? $sizes['md']]) }} aria-label="{{ $name }} logo">@if($src)<img class="size-full object-cover" src="{{ $src }}" alt="">@else{{ str($name)->substr(0,1)->upper() }}@endif</div>

@@ -1,0 +1,19 @@
+<x-layouts.app title="Your profile · M Talent">
+    <header class="border-b bg-surface"><div class="bt-shell flex min-h-16 items-center justify-between"><a href="{{ route('home') }}" class="flex items-center gap-2 font-semibold"><span class="grid size-8 place-items-center rounded-md bg-brand-700 text-white">M</span>M Talent</a><form method="post" action="{{ route('logout') }}">@csrf<x-button variant="quiet" size="sm" type="submit">Sign out</x-button></form></div></header>
+    <main id="main-content" class="bt-shell max-w-4xl py-10 sm:py-14">
+        <p class="bt-eyebrow">Account</p><h1 class="mt-2 text-3xl font-semibold tracking-tight">Your account basics</h1>
+        <p class="mt-2 text-ink-500">Manage your account name, location, and preferences. Build your professional presence and visibility separately.</p>
+        <a class="mt-4 inline-flex text-sm font-semibold text-brand-700 underline" href="{{ route('candidate.profile.edit') }}">Manage professional talent profile →</a>
+        @if(session('status') === 'profile-updated')<x-alert class="mt-6" tone="success">Your profile has been updated.</x-alert>@endif
+        <section class="mt-8"><x-card><form class="space-y-5" method="post" action="{{ route('profile.update') }}">
+            @csrf @method('PUT')
+            <x-input name="name" label="Full name" autocomplete="name" required :value="old('name', $user->name)"/>@error('name')<p class="bt-error">{{ $message }}</p>@enderror
+            <x-input name="headline" label="Professional headline" maxlength="160" :value="old('headline', $user->profile?->headline)"/>@error('headline')<p class="bt-error">{{ $message }}</p>@enderror
+            <div><label class="bt-label" for="bio">About</label><textarea class="bt-field min-h-28" id="bio" name="bio" maxlength="2000">{{ old('bio', $user->profile?->bio) }}</textarea>@error('bio')<p class="bt-error">{{ $message }}</p>@enderror</div>
+            <div><label class="bt-label" for="location_id">Primary location</label><select id="location_id" name="location_id" class="bt-field"><option value="">Choose a location</option>@foreach($locations as $option)<option value="{{ $option->id }}" @selected((string) old('location_id', $user->profile?->location_id) === (string) $option->id)>{{ $option->name }}@if($option->parent) · {{ $option->parent->name }}@endif</option>@endforeach</select>@error('location_id')<p class="bt-error">{{ $message }}</p>@enderror<p class="bt-help">This saves a structured geographic reference. Profile visibility controls will apply when marketplace profiles are introduced.</p></div>
+            <x-input name="timezone" label="Time zone" :value="old('timezone', $user->timezone)" hint="Use an IANA time zone, such as Europe/London."/>@error('timezone')<p class="bt-error">{{ $message }}</p>@enderror
+            <input type="hidden" name="locale" value="{{ $user->locale }}"><div class="flex justify-end"><x-button type="submit">Save profile</x-button></div>
+        </form></x-card></section>
+        <section class="mt-12 border-t pt-8"><h2 class="text-lg font-semibold">Delete account</h2><p class="mt-2 max-w-2xl text-sm text-ink-500">Deleting your account signs you out and removes it from active use. Some records may be retained or anonymized where needed to operate the service.</p><form class="mt-4 flex flex-col gap-3 sm:flex-row" method="post" action="{{ route('profile.destroy') }}" onsubmit="return confirm('Delete your account? This will sign you out.');">@csrf @method('DELETE')<x-input name="password" type="password" label="Confirm with your password" autocomplete="current-password" required/>@error('password')<p class="bt-error">{{ $message }}</p>@enderror<x-button class="self-end" variant="danger" type="submit">Delete account</x-button></form></section>
+    </main>
+</x-layouts.app>

@@ -1,0 +1,2 @@
+@props(['label', 'description' => null, 'id' => null]) @php($fieldId = $id ?? $attributes->get('value'))
+<label class="flex cursor-pointer items-start gap-3" for="{{ $fieldId }}"><input id="{{ $fieldId }}" type="radio" {{ $attributes->class(['mt-0.5 size-5 border-line text-brand-700 focus:ring-brand-600']) }}><span><span class="text-sm font-medium text-ink-950">{{ $label }}</span>@if($description)<span class="mt-0.5 block text-sm text-ink-500">{{ $description }}</span>@endif</span></label>

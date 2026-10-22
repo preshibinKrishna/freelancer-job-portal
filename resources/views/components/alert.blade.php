@@ -1,0 +1,2 @@
+@props(['tone' => 'info', 'title' => null]) @php($tones=['info'=>'border-brand-100 bg-brand-100/50 text-brand-700','success'=>'border-success-100 bg-success-100/60 text-success-700','warning'=>'border-warning-100 bg-warning-100/60 text-warning-700','danger'=>'border-danger-100 bg-danger-100/60 text-danger-700'])
+<div {{ $attributes->class(['rounded-md border p-4 text-sm',$tones[$tone] ?? $tones['info']]) }} role="alert">@if($title)<p class="font-semibold">{{ $title }}</p>@endif<div @class(['mt-1'=>$title])>{{ $slot }}</div></div>

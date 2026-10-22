@@ -1,0 +1,2 @@
+@props(['name', 'title'])
+<dialog x-data x-ref="drawer" x-on:open-drawer.window="if ($event.detail === '{{ $name }}') $refs.drawer.showModal()" class="m-0 ml-auto h-full w-full max-w-md border-0 bg-surface p-6 text-ink-950 shadow-float backdrop:bg-ink-950/40"><div class="flex justify-between"><h2 class="text-lg font-semibold">{{ $title }}</h2><button x-on:click="$refs.drawer.close()" aria-label="Close panel">×</button></div><div class="mt-6">{{ $slot }}</div></dialog>

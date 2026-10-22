@@ -1,0 +1,13 @@
+<main id="main-content" class="bt-shell max-w-4xl py-10 sm:py-14">
+    <p class="bt-eyebrow">Trust & safety</p><h1 class="mt-2 text-3xl font-semibold">My verifications</h1>
+    <p class="mt-3 text-ink-500">Submit evidence for review. A badge appears only after M Talent approves the request.</p>
+    @if(session('status'))<p role="status" class="mt-5 rounded-lg border border-success-100 bg-success-100 p-3 text-sm text-success-700">{{ session('status') }}</p>@endif
+    <form wire:submit="submit" class="mt-6 grid gap-4 rounded-xl border bg-white p-5 sm:grid-cols-2">
+        <label class="text-sm font-medium">Verification type<select wire:model="type" class="mt-1 block w-full rounded-md border-line"><option value="email">Email</option><option value="phone">Phone</option><option value="identity">Identity</option><option value="skill">Skill</option><option value="employment">Employment</option><option value="education">Education</option><option value="certification">Certification</option><option value="portfolio">Portfolio</option></select></label>
+        <label class="text-sm font-medium">What should be verified?<input wire:model="label" maxlength="160" required class="mt-1 block w-full rounded-md border-line" placeholder="Laravel skill"></label>
+        <label class="text-sm font-medium sm:col-span-2">Evidence details <span class="font-normal text-ink-500">(do not include passwords or identity numbers)</span><textarea wire:model="evidence" maxlength="2000" rows="3" class="mt-1 block w-full rounded-md border-line" placeholder="Describe the evidence or provide a public credential link"></textarea></label>
+        @error('type')<p class="text-sm text-red-700">{{ $message }}</p>@enderror @error('label')<p class="text-sm text-red-700">{{ $message }}</p>@enderror @error('evidence')<p class="text-sm text-red-700">{{ $message }}</p>@enderror
+        <div class="sm:col-span-2"><button class="bt-button-primary" type="submit">Submit for review</button></div>
+    </form>
+    <section class="mt-8 space-y-3" aria-label="Submitted verification requests">@forelse($requests as $request)<article class="rounded-xl border bg-white p-4"><div class="flex flex-wrap items-center justify-between gap-2"><h2 class="font-semibold">{{ ucfirst($request->type->value) }} · {{ $request->label }}</h2><span class="rounded-full bg-slate-100 px-3 py-1 text-sm">{{ ucfirst($request->displayStatus()->value) }}</span></div>@if($request->reviewer_notes)<p class="mt-2 text-sm text-ink-500">Reviewer note: {{ $request->reviewer_notes }}</p>@endif</article>@empty<p class="text-sm text-ink-500">No verification requests yet.</p>@endforelse</section>
+</main>

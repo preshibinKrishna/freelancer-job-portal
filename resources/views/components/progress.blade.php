@@ -1,0 +1,2 @@
+@props(['value' => 0, 'label' => null])
+<div {{ $attributes }}>@if($label)<div class="mb-1.5 flex justify-between text-sm"><span class="font-medium text-ink-700">{{ $label }}</span><span class="text-ink-500">{{ $value }}%</span></div>@endif<div class="h-2 overflow-hidden rounded-full bg-slate-100" role="progressbar" aria-valuenow="{{ $value }}" aria-valuemin="0" aria-valuemax="100"><div class="h-full rounded-full bg-brand-600 transition-[width]" style="width: {{ min(100, max(0, $value)) }}%"></div></div></div>
