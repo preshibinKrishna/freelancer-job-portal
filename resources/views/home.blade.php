@@ -43,11 +43,23 @@
                 @endauth
             </div>
         </div>
-        <nav class="bt-home-mobile-nav flex gap-1 overflow-x-auto px-3 pb-2.5 lg:hidden" aria-label="Main navigation">
-            <a href="{{ route('jobs.index') }}">Find work</a>
-            <a href="{{ route('freelancers.index') }}">Freelancers</a>
-            <a href="{{ route('projects.index') }}">Projects</a>
-            <a href="{{ route('register', ['account_type' => 'employer']) }}">Hire talent</a>
+        <nav class="bt-home-mobile-nav grid grid-cols-4 gap-1.5 px-3 py-2 lg:hidden" aria-label="Main navigation">
+            <a href="{{ route('jobs.index') }}" aria-label="Find work">
+                <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="3.5" y="7" width="17" height="13.5" rx="2.5" stroke="currentColor" stroke-width="1.7"/><path d="M8.5 7V5.5A1.5 1.5 0 0 1 10 4h4a1.5 1.5 0 0 1 1.5 1.5V7M3.5 12h17M10 12v1.5h4V12" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                <span>Jobs</span>
+            </a>
+            <a href="{{ route('freelancers.index') }}" aria-label="Browse freelancers">
+                <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="9" cy="8" r="3.2" stroke="currentColor" stroke-width="1.7"/><path d="M3.5 19v-1.2A4.8 4.8 0 0 1 8.3 13h1.4a4.8 4.8 0 0 1 4.8 4.8V19H3.5ZM16 5.3a3.2 3.2 0 0 1 0 6.2M17 13.2a4.8 4.8 0 0 1 3.5 4.6V19" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                <span>Talent</span>
+            </a>
+            <a href="{{ route('projects.index') }}" aria-label="Browse projects">
+                <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 6.5h16M6.5 3.5v6M17.5 3.5v6M5 10h14a1.5 1.5 0 0 1 1.5 1.5V19A1.5 1.5 0 0 1 19 20.5H5A1.5 1.5 0 0 1 3.5 19v-7.5A1.5 1.5 0 0 1 5 10Z" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/><path d="m8 15 2.2 2.2L16 12" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                <span>Projects</span>
+            </a>
+            <a href="{{ route('register', ['account_type' => 'employer']) }}" aria-label="Hire talent">
+                <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 3.5v17M3.5 12h17" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.6"/></svg>
+                <span>Hire</span>
+            </a>
         </nav>
     </header>
 
