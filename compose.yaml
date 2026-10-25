@@ -1,0 +1,34 @@
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    env_file:
+      - ./docker/app.env
+    depends_on:
+      database:
+        condition: service_healthy
+    ports:
+      - "127.0.0.1:8765:8000"
+    volumes:
+      - app_storage:/var/www/html/storage
+      - app_bootstrap_cache:/var/www/html/bootstrap/cache
+    restart: unless-stopped
+
+  database:
+    image: mysql:8.4
+    env_file:
+      - ./docker/db.env
+    volumes:
+      - mysql_data:/var/lib/mysql
+    healthcheck:
+      test: ["CMD-SHELL", "mysqladmin ping -h 127.0.0.1 -uroot -p\"$${MYSQL_ROOT_PASSWORD}\" --silent"]
+      interval: 5s
+      timeout: 5s
+      retries: 20
+    restart: unless-stopped
+
+volumes:
+  app_storage:
+  app_bootstrap_cache:
+  mysql_data:

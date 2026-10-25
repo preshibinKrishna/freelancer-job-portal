@@ -144,6 +144,13 @@ Wrap email, storage, identity verification, payment, and search providers behind
 
 ## Operations
 
+### Local Docker development
+
+- `compose.yaml` runs the Laravel app and MySQL for local development. The app is published only on `127.0.0.1:8765`; the database port is private to the Compose network.
+- `docker/setup-env.sh` creates ignored local environment files with random application and database credentials. The host `.env` file is not passed to the containers.
+- Database data, application storage, and compiled runtime cache use named Docker volumes. `docker compose down` preserves data; `docker compose down -v` removes it.
+- The app container applies migrations and idempotent reference seeders at startup. Rebuild the image with `docker compose up --build -d` after source or frontend changes.
+
 ## SEO architecture decisions
 
 - Public marketplace pages share layout-driven metadata for canonical URLs, descriptions, Open Graph, Twitter/X cards, and JSON-LD. Page controllers provide schema.org data for published jobs, organizations, public people, projects, skills, and geographic landing pages; breadcrumb navigation emits a matching `BreadcrumbList`.
