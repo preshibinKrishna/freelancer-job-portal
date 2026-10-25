@@ -219,18 +219,18 @@
     <footer class="bt-home-footer relative overflow-hidden text-white">
         <div class="bt-home-footer-glow" aria-hidden="true"></div>
         <div class="bt-shell bt-home-shell relative py-12 sm:py-16">
-            <div class="grid gap-10 border-b border-white/10 pb-10 md:grid-cols-2 lg:grid-cols-[1.35fr_.8fr_.8fr_.8fr] lg:gap-12 lg:pb-14">
-                <div class="max-w-sm">
-                    <a href="{{ route('home') }}" class="inline-flex items-center gap-3" aria-label="MTalent home"><span class="bt-home-footer-mark grid size-11 place-items-center rounded-xl text-lg font-semibold text-white">M</span><span class="text-xl font-semibold tracking-[-.04em]">MTalent</span></a>
+            <div class="grid grid-cols-2 gap-x-6 gap-y-9 border-b border-white/10 pb-10 sm:gap-x-10 lg:grid-cols-[1.35fr_.8fr_.8fr_.8fr] lg:gap-12 lg:pb-14">
+                <div class="col-span-2 mx-auto max-w-sm text-center lg:col-span-1 lg:mx-0 lg:text-left">
+                    <a href="{{ route('home') }}" class="inline-flex items-center justify-center gap-3 lg:justify-start" aria-label="MTalent home"><span class="bt-home-footer-mark grid size-11 place-items-center rounded-xl text-lg font-semibold text-white">M</span><span class="text-xl font-semibold tracking-[-.04em]">MTalent</span></a>
                     <p class="mt-5 text-sm leading-6 text-slate-300">Technology careers, independent work, and the people who make it happen.</p>
                     <a href="{{ route('register') }}" class="bt-home-footer-cta mt-6">Find your next move <span aria-hidden="true">↗</span></a>
                 </div>
 
                 <nav aria-label="Explore MTalent"><h2 class="bt-home-footer-heading">Explore</h2><ul class="mt-4 space-y-3"><li><a class="bt-home-footer-link" href="{{ route('jobs.index') }}">Technology jobs</a></li><li><a class="bt-home-footer-link" href="{{ route('freelancers.index') }}">Freelancers</a></li><li><a class="bt-home-footer-link" href="{{ route('projects.index') }}">Projects</a></li></ul></nav>
                 <nav aria-label="For employers"><h2 class="bt-home-footer-heading">For employers</h2><ul class="mt-4 space-y-3"><li><a class="bt-home-footer-link" href="{{ route('register', ['account_type' => 'employer']) }}">Hire talent</a></li><li><a class="bt-home-footer-link" href="{{ route('freelancers.index') }}">Find a freelancer</a></li><li><a class="bt-home-footer-link" href="{{ route('login') }}">Employer sign in</a></li></ul></nav>
-                <nav aria-label="Your account"><h2 class="bt-home-footer-heading">Your account</h2><ul class="mt-4 space-y-3"><li><a class="bt-home-footer-link" href="{{ route('register') }}">Create account</a></li><li><a class="bt-home-footer-link" href="{{ route('login') }}">Sign in</a></li></ul></nav>
+                <nav class="col-span-2 text-center lg:col-span-1 lg:text-left" aria-label="Your account"><h2 class="bt-home-footer-heading">Your account</h2><ul class="mt-4 flex flex-wrap justify-center gap-x-6 gap-y-2 lg:block lg:space-y-3"><li><a class="bt-home-footer-link" href="{{ route('register') }}">Create account</a></li><li><a class="bt-home-footer-link" href="{{ route('login') }}">Sign in</a></li></ul></nav>
             </div>
-            <div class="flex flex-col gap-3 pt-5 text-xs text-slate-400 sm:flex-row sm:items-center sm:justify-between"><p>© {{ now()->year }} MTalent. All rights reserved.</p><p class="inline-flex items-center gap-2"><span class="size-1.5 rounded-full bg-emerald-300" aria-hidden="true"></span>Work and talent, moving forward.</p></div>
+            <div class="flex flex-col items-center gap-3 pt-5 text-center text-xs text-slate-400 sm:flex-row sm:justify-between sm:text-left"><p>© {{ now()->year }} MTalent. All rights reserved.</p><p class="inline-flex items-center gap-2"><span class="size-1.5 rounded-full bg-emerald-300" aria-hidden="true"></span>Work and talent, moving forward.</p></div>
         </div>
     </footer>
 </body>
