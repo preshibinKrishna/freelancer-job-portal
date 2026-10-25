@@ -23,7 +23,7 @@
 
     <header class="bt-home-header sticky top-0 z-40 border-b border-line/80 bg-white/95 backdrop-blur-xl">
         <div class="bt-shell bt-home-shell flex min-h-[4.5rem] items-center justify-between gap-4">
-            <a href="{{ route('home') }}" class="group flex shrink-0 items-center gap-3" aria-label="MTalent home">
+            <a href="{{ route('home') }}" class="group flex shrink-0 items-center gap-2.5 sm:gap-3" aria-label="MTalent home">
                 <span class="bt-home-brand-mark grid size-10 place-items-center rounded-xl text-lg font-semibold text-white">M</span>
                 <span><span class="block text-[1.1rem] font-semibold leading-tight tracking-[-.04em] text-ink-950">MTalent</span><span class="mt-0.5 hidden text-[9px] font-semibold uppercase tracking-[.16em] text-ink-400 sm:block">Work · Talent · Projects</span></span>
             </a>
@@ -43,23 +43,11 @@
                 @endauth
             </div>
         </div>
-        <nav class="bt-home-mobile-nav grid grid-cols-4 gap-1.5 px-3 py-2 lg:hidden" aria-label="Main navigation">
-            <a href="{{ route('jobs.index') }}" aria-label="Find work">
-                <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="3.5" y="7" width="17" height="13.5" rx="2.5" stroke="currentColor" stroke-width="1.7"/><path d="M8.5 7V5.5A1.5 1.5 0 0 1 10 4h4a1.5 1.5 0 0 1 1.5 1.5V7M3.5 12h17M10 12v1.5h4V12" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                <span>Jobs</span>
-            </a>
-            <a href="{{ route('freelancers.index') }}" aria-label="Browse freelancers">
-                <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="9" cy="8" r="3.2" stroke="currentColor" stroke-width="1.7"/><path d="M3.5 19v-1.2A4.8 4.8 0 0 1 8.3 13h1.4a4.8 4.8 0 0 1 4.8 4.8V19H3.5ZM16 5.3a3.2 3.2 0 0 1 0 6.2M17 13.2a4.8 4.8 0 0 1 3.5 4.6V19" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                <span>Talent</span>
-            </a>
-            <a href="{{ route('projects.index') }}" aria-label="Browse projects">
-                <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 6.5h16M6.5 3.5v6M17.5 3.5v6M5 10h14a1.5 1.5 0 0 1 1.5 1.5V19A1.5 1.5 0 0 1 19 20.5H5A1.5 1.5 0 0 1 3.5 19v-7.5A1.5 1.5 0 0 1 5 10Z" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/><path d="m8 15 2.2 2.2L16 12" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                <span>Projects</span>
-            </a>
-            <a href="{{ route('register', ['account_type' => 'employer']) }}" aria-label="Hire talent">
-                <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 3.5v17M3.5 12h17" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.6"/></svg>
-                <span>Hire</span>
-            </a>
+        <nav class="bt-home-mobile-nav grid grid-cols-4 px-3 lg:hidden" aria-label="Main navigation">
+            <a href="{{ route('jobs.index') }}" aria-label="Find work">Jobs</a>
+            <a href="{{ route('freelancers.index') }}" aria-label="Browse freelancers">Talent</a>
+            <a href="{{ route('projects.index') }}" aria-label="Browse projects">Projects</a>
+            <a href="{{ route('register', ['account_type' => 'employer']) }}" aria-label="Hire talent">Hire</a>
         </nav>
     </header>
 
@@ -228,7 +216,7 @@
 
                 <nav aria-label="Explore MTalent"><h2 class="bt-home-footer-heading">Explore</h2><ul class="mt-3 space-y-2.5"><li><a class="bt-home-footer-link" href="{{ route('jobs.index') }}">Technology jobs</a></li><li><a class="bt-home-footer-link" href="{{ route('freelancers.index') }}">Freelancers</a></li><li><a class="bt-home-footer-link" href="{{ route('projects.index') }}">Projects</a></li></ul></nav>
                 <nav class="text-right lg:text-left" aria-label="For employers"><h2 class="bt-home-footer-heading">For employers</h2><ul class="mt-3 space-y-2.5"><li><a class="bt-home-footer-link" href="{{ route('register', ['account_type' => 'employer']) }}">Hire talent</a></li><li><a class="bt-home-footer-link" href="{{ route('freelancers.index') }}">Find a freelancer</a></li><li><a class="bt-home-footer-link" href="{{ route('login') }}">Employer sign in</a></li></ul></nav>
-                <nav class="col-span-2 flex flex-wrap items-center justify-center gap-x-4 gap-y-2 text-center lg:col-span-1 lg:flex-col lg:items-start lg:gap-0 lg:text-left" aria-label="Your account"><h2 class="bt-home-footer-heading">Your account</h2><ul class="flex flex-wrap justify-center gap-x-4 lg:mt-4 lg:block lg:space-y-3"><li><a class="bt-home-footer-link" href="{{ route('register') }}">Create account</a></li><li><a class="bt-home-footer-link" href="{{ route('login') }}">Sign in</a></li></ul></nav>
+                <nav class="col-span-2 flex justify-center border-t border-white/10 pt-4 lg:col-span-1 lg:justify-start lg:border-0 lg:pt-0" aria-label="Account links"><ul class="flex flex-wrap items-center justify-center gap-2.5 lg:flex-col lg:items-start"><li><a class="bt-home-account-link bt-home-account-link-primary" href="{{ route('register') }}">Create account</a></li><li><a class="bt-home-account-link" href="{{ route('login') }}">Sign in</a></li></ul></nav>
             </div>
             <div class="flex flex-col items-center gap-2.5 pt-4 text-center text-xs text-slate-400 sm:flex-row sm:justify-between sm:text-left"><p>© {{ now()->year }} MTalent. All rights reserved.</p><p class="inline-flex items-center gap-2"><span class="size-1.5 rounded-full bg-emerald-300" aria-hidden="true"></span>Work and talent, moving forward.</p></div>
         </div>
