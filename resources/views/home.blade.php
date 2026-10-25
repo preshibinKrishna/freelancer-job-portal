@@ -3,29 +3,34 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Build your technology career, find trusted talent, and discover freelance opportunities with M Talent.">
+    <meta name="description" content="Build your technology career, find trusted talent, and discover freelance opportunities with MTalent.">
     <meta name="robots" content="index,follow">
     <link rel="canonical" href="{{ route('home') }}">
-    <meta property="og:site_name" content="M Talent"><meta property="og:type" content="website"><meta property="og:title" content="M Talent — Technology careers, talent and freelance work"><meta property="og:description" content="Build your technology career, find trusted talent, and discover freelance opportunities with M Talent."><meta property="og:url" content="{{ route('home') }}">
-    <meta name="twitter:card" content="summary"><meta name="twitter:title" content="M Talent — Technology careers, talent and freelance work"><meta name="twitter:description" content="Build your technology career, find trusted talent, and discover freelance opportunities with M Talent.">
-    <script type="application/ld+json">{!! json_encode(['@context' => 'https://schema.org', '@graph' => [['@type' => 'Organization', 'name' => 'M Talent', 'url' => route('home')], ['@type' => 'WebSite', 'name' => 'M Talent', 'url' => route('home'), 'potentialAction' => ['@type' => 'SearchAction', 'target' => route('jobs.index').'?q={search_term_string}', 'query-input' => 'required name=search_term_string']]]], JSON_UNESCAPED_SLASHES | JSON_HEX_TAG | JSON_HEX_AMP | JSON_HEX_APOS | JSON_HEX_QUOT | JSON_THROW_ON_ERROR) !!}</script>
-    <title>M Talent — Technology careers, talent and freelance work</title>
+    <meta property="og:site_name" content="MTalent">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="MTalent — Technology careers, talent and freelance work">
+    <meta property="og:description" content="Build your technology career, find trusted talent, and discover freelance opportunities with MTalent.">
+    <meta property="og:url" content="{{ route('home') }}">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="MTalent — Technology careers, talent and freelance work">
+    <meta name="twitter:description" content="Build your technology career, find trusted talent, and discover freelance opportunities with MTalent.">
+    <script type="application/ld+json">{!! json_encode(['@context' => 'https://schema.org', '@graph' => [['@type' => 'Organization', 'name' => 'MTalent', 'url' => route('home')], ['@type' => 'WebSite', 'name' => 'MTalent', 'url' => route('home'), 'potentialAction' => ['@type' => 'SearchAction', 'target' => route('jobs.index').'?q={search_term_string}', 'query-input' => 'required name=search_term_string']]]], JSON_UNESCAPED_SLASHES | JSON_HEX_TAG | JSON_HEX_AMP | JSON_HEX_APOS | JSON_HEX_QUOT | JSON_THROW_ON_ERROR) !!}</script>
+    <title>MTalent — Technology careers, talent and freelance work</title>
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 <body class="bg-white text-ink-950 antialiased">
     <a class="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-50 focus:rounded-md focus:bg-ink-950 focus:px-4 focus:py-3 focus:text-white" href="#main-content">Skip to content</a>
 
-    <header class="relative z-20 border-b border-line bg-white/95">
-        <div class="bt-shell flex min-h-[4.5rem] items-center justify-between gap-5">
-            <a href="{{ route('home') }}" class="flex shrink-0 items-center gap-2.5" aria-label="M Talent home">
+    <header class="border-b border-line bg-white">
+        <div class="bt-shell flex min-h-16 items-center justify-between gap-5">
+            <a href="{{ route('home') }}" class="flex shrink-0 items-center gap-2.5" aria-label="MTalent home">
                 <span class="grid size-9 place-items-center rounded-lg bg-brand-700 text-lg font-semibold text-white">M</span>
-                <span class="text-[1.05rem] font-semibold tracking-tight">M<span class="font-normal text-ink-500"> Talent</span></span>
+                <span class="text-lg font-semibold tracking-tight">MTalent</span>
             </a>
-            <nav class="hidden items-center gap-7 text-sm font-medium text-ink-700 lg:flex" aria-label="Main navigation">
-                <a class="hover:text-brand-700" href="{{ route('jobs.index') }}">Careers</a>
-                <a class="hover:text-brand-700" href="{{ route('freelancers.index') }}">Freelancers</a>
-                <a class="hover:text-brand-700" href="#how-it-works">How it works</a>
-                <a class="hover:text-brand-700" href="#kerala">Our ecosystem</a>
+            <nav class="hidden items-center gap-8 text-sm font-medium text-ink-600 lg:flex" aria-label="Main navigation">
+                <a class="transition hover:text-brand-700" href="{{ route('jobs.index') }}">Careers</a>
+                <a class="transition hover:text-brand-700" href="{{ route('freelancers.index') }}">Freelancers</a>
+                <a class="transition hover:text-brand-700" href="#how-it-works">How it works</a>
             </nav>
             <div class="flex shrink-0 items-center gap-2 sm:gap-3">
                 @auth
@@ -38,107 +43,203 @@
             </div>
         </div>
         <nav class="flex gap-6 overflow-x-auto border-t border-line px-4 py-2.5 text-xs font-medium text-ink-600 lg:hidden" aria-label="Mobile navigation">
-            <a class="shrink-0" href="{{ route('jobs.index') }}">Careers</a><a class="shrink-0" href="{{ route('freelancers.index') }}">Freelancers</a><a class="shrink-0" href="#how-it-works">How it works</a><a class="shrink-0" href="#kerala">Kerala ecosystem</a>
+            <a class="shrink-0" href="{{ route('jobs.index') }}">Careers</a>
+            <a class="shrink-0" href="{{ route('freelancers.index') }}">Freelancers</a>
+            <a class="shrink-0" href="#how-it-works">How it works</a>
         </nav>
     </header>
 
     <main id="main-content">
-        <section class="bt-home-hero relative isolate overflow-hidden">
-            <div class="pointer-events-none absolute inset-0 -z-10" aria-hidden="true"><div class="bt-hero-orbit bt-hero-orbit-one"></div><div class="bt-hero-orbit bt-hero-orbit-two"></div><div class="absolute inset-y-0 right-0 hidden w-[45%] bg-[radial-gradient(ellipse_at_70%_45%,rgba(8,124,116,.10),transparent_62%)] lg:block"></div></div>
-            <div class="bt-shell grid min-h-[600px] items-center gap-12 py-16 sm:py-20 lg:grid-cols-[1.1fr_.9fr] lg:py-24">
-                <div class="relative z-10 max-w-3xl">
-                    <p class="bt-eyebrow inline-flex items-center gap-2 rounded-full border border-brand-100 bg-white px-3 py-1.5"><span class="size-1.5 rounded-full bg-brand-600"></span> The talent network for technology</p>
-                    <h1 class="bt-display mt-6 max-w-3xl text-[2.8rem] leading-[1.04] font-semibold tracking-[-.055em] text-ink-950 sm:text-6xl lg:text-[4.4rem]">Technology careers, talent and freelance work <span class="text-brand-700">— connected.</span></h1>
-                    <p class="mt-6 max-w-xl text-base leading-7 text-ink-600 sm:text-lg sm:leading-8">A more considered way to find your next role, work with independent experts, or build a team that moves technology forward.</p>
-                    <div class="mt-8 flex flex-wrap gap-3">
+        <section class="relative overflow-hidden bg-[#f4f8f6]" aria-labelledby="hero-heading">
+            <div class="pointer-events-none absolute -right-36 -top-48 size-[34rem] rounded-full border border-brand-700/5" aria-hidden="true"></div>
+            <div class="pointer-events-none absolute -right-16 -top-28 size-[24rem] rounded-full border border-brand-700/5" aria-hidden="true"></div>
+            <div class="bt-shell relative py-16 sm:py-20 lg:py-24">
+                <div class="max-w-4xl">
+                    <p class="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[.14em] text-brand-700">
+                        <span class="size-1.5 rounded-full bg-brand-600" aria-hidden="true"></span>
+                        Technology work, thoughtfully connected
+                    </p>
+                    <h1 id="hero-heading" class="mt-5 max-w-4xl text-4xl font-semibold leading-[1.06] tracking-[-.055em] text-ink-950 sm:text-6xl lg:text-7xl">
+                        Find good work. <span class="text-brand-700">Build what’s next.</span>
+                    </h1>
+                    <p class="mt-5 max-w-2xl text-base leading-7 text-ink-600 sm:text-lg sm:leading-8">
+                        Discover technology careers, work with independent experts, or find the people who can move your business forward.
+                    </p>
+                    <div class="mt-7 flex flex-wrap items-center gap-x-6 gap-y-3">
                         <a href="{{ route('jobs.index') }}" class="bt-button-primary group">Find a job <span class="ml-2 transition-transform group-hover:translate-x-1" aria-hidden="true">→</span></a>
-                        <a href="{{ route('freelancers.index') }}" class="bt-button-secondary group">Hire a freelancer <span class="ml-2 transition-transform group-hover:translate-x-1" aria-hidden="true">→</span></a>
-                        <a href="{{ route('register', ['account_type' => 'employer']) }}" class="inline-flex min-h-11 items-center px-2 text-sm font-semibold text-ink-700 hover:text-brand-700">Hire talent <span class="ml-2" aria-hidden="true">↗</span></a>
+                        <a href="{{ route('freelancers.index') }}" class="text-sm font-semibold text-ink-700 transition hover:text-brand-700">Hire a freelancer <span class="ml-1" aria-hidden="true">↗</span></a>
+                        <a href="{{ route('register', ['account_type' => 'employer']) }}" class="text-sm font-semibold text-ink-700 transition hover:text-brand-700">Hire talent <span class="ml-1" aria-hidden="true">↗</span></a>
                     </div>
-                    <div class="mt-8 flex flex-wrap items-center gap-x-5 gap-y-2 text-xs font-medium text-ink-500"><span class="flex items-center gap-2"><span class="text-brand-700" aria-hidden="true">✓</span> Curated technology opportunities</span><span class="flex items-center gap-2"><span class="text-brand-700" aria-hidden="true">✓</span> Professional profiles, built on trust</span></div>
                 </div>
 
-                <div class="relative mx-auto w-full max-w-[33rem] lg:mr-0" aria-label="A connected talent network illustration">
-                    <div class="bt-network-panel relative overflow-hidden rounded-[1.75rem] border border-line bg-white p-5 shadow-float sm:p-7">
-                        <div class="flex items-center justify-between border-b border-line pb-4"><div><p class="text-xs font-semibold tracking-[.12em] text-brand-700 uppercase">One professional network</p><p class="mt-1 text-sm text-ink-500">Built for how technology teams work</p></div><span class="grid size-9 place-items-center rounded-full bg-brand-50 text-brand-700" aria-hidden="true">↗</span></div>
-                        <div class="relative mt-5 min-h-[19rem] sm:min-h-[21rem]">
-                            <svg class="absolute inset-0 size-full" viewBox="0 0 500 340" fill="none" aria-hidden="true"><path d="M93 84C183 84 167 167 250 167M405 84C321 84 334 167 250 167M93 258C184 258 168 167 250 167M405 258C322 258 335 167 250 167" stroke="#D5E5E2" stroke-width="2" stroke-dasharray="5 7"/><circle cx="250" cy="167" r="73" fill="#F1F8F6"/><circle cx="250" cy="167" r="53" fill="white" stroke="#D5E5E2"/><path d="M238 190V143H247L268 172V143H278V190H269L248 161V190H238Z" fill="#075A55"/><circle cx="250" cy="167" r="67" stroke="#087C74" stroke-opacity=".1" stroke-width="1.5"/></svg>
-                            <div class="absolute left-0 top-4 w-[10.5rem] rounded-xl border border-line bg-white p-3.5 shadow-sm sm:w-[12rem]"><div class="flex items-center gap-2.5"><span class="grid size-8 place-items-center rounded-lg bg-[#EEF2FA] text-sm font-semibold text-[#4C5C8A]">01</span><div><p class="text-xs font-semibold">Explore careers</p><p class="text-[10px] text-ink-500">Roles with direction</p></div></div></div>
-                            <div class="absolute right-0 top-4 w-[10.5rem] rounded-xl border border-line bg-white p-3.5 shadow-sm sm:w-[12rem]"><div class="flex items-center gap-2.5"><span class="grid size-8 place-items-center rounded-lg bg-brand-50 text-sm font-semibold text-brand-700">02</span><div><p class="text-xs font-semibold">Meet independent talent</p><p class="text-[10px] text-ink-500">Experts with a point of view</p></div></div></div>
-                            <div class="absolute bottom-5 left-0 w-[10.5rem] rounded-xl border border-line bg-white p-3.5 shadow-sm sm:w-[12rem]"><div class="flex items-center gap-2.5"><span class="grid size-8 place-items-center rounded-lg bg-[#F8F2E8] text-sm font-semibold text-[#94723C]">03</span><div><p class="text-xs font-semibold">Build stronger teams</p><p class="text-[10px] text-ink-500">Hiring, made thoughtful</p></div></div></div>
-                            <div class="absolute right-0 bottom-5 w-[10.5rem] rounded-xl border border-line bg-white p-3.5 shadow-sm sm:w-[12rem]"><div class="flex items-center gap-2.5"><span class="grid size-8 place-items-center rounded-lg bg-[#F0F5EF] text-sm font-semibold text-[#4D7650]">04</span><div><p class="text-xs font-semibold">Grow with confidence</p><p class="text-[10px] text-ink-500">Trust in every connection</p></div></div></div>
-                        </div>
-                        <div class="flex items-center justify-between border-t border-line pt-4 text-xs text-ink-500"><span>Careers <span class="mx-1 text-brand-700">·</span> Freelance <span class="mx-1 text-brand-700">·</span> Hiring</span><span class="flex items-center gap-1.5"><span class="size-1.5 rounded-full bg-emerald-500"></span> Connected</span></div>
+                <form action="{{ route('jobs.index') }}" method="GET" class="mt-10 max-w-4xl rounded-xl border border-line bg-white p-3 shadow-float sm:flex sm:items-center sm:gap-3 sm:p-3.5" role="search" aria-label="Search technology jobs">
+                    <label class="sr-only" for="homepage-search">Role, skill, or company</label>
+                    <div class="relative min-w-0 flex-1">
+                        <span class="pointer-events-none absolute left-4 top-1/2 -translate-y-1/2 text-ink-500" aria-hidden="true">
+                            <svg class="size-5" viewBox="0 0 24 24" fill="none"><circle cx="10.8" cy="10.8" r="6.8" stroke="currentColor" stroke-width="1.7"/><path d="m16 16 4.5 4.5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>
+                        </span>
+                        <input id="homepage-search" name="q" type="search" class="bt-field min-h-12 border-0 pl-11 shadow-none focus:ring-0" placeholder="Search roles, skills, or companies" autocomplete="off">
                     </div>
-                    <div class="absolute -bottom-5 left-1/2 -z-10 h-14 w-4/5 -translate-x-1/2 rounded-full bg-brand-100/70 blur-2xl" aria-hidden="true"></div>
-                </div>
-            </div>
-        </section>
-
-        <section class="relative z-10 -mt-1 bg-white pb-12 sm:pb-16" aria-labelledby="search-heading">
-            <div class="bt-shell"><div class="bt-search-shell mx-auto max-w-5xl rounded-2xl border border-line bg-white p-4 shadow-float sm:p-5">
-                <div class="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between"><div><p class="bt-eyebrow">Start with what you know</p><h2 id="search-heading" class="mt-1 text-lg font-semibold tracking-tight sm:text-xl">Find the right next step.</h2></div><p class="max-w-sm text-sm leading-6 text-ink-500">Search roles, skills, or teams. Refine your results when you’re ready.</p></div>
-                <form action="{{ route('jobs.index') }}" method="GET" class="mt-5 flex flex-col gap-2 sm:flex-row sm:gap-3" role="search" aria-label="Search technology jobs">
-                    <label class="sr-only" for="homepage-search">Role, skill, or company</label><div class="relative flex-1"><span class="pointer-events-none absolute left-4 top-1/2 -translate-y-1/2 text-ink-500" aria-hidden="true"><svg class="size-5" viewBox="0 0 24 24" fill="none"><circle cx="10.8" cy="10.8" r="6.8" stroke="currentColor" stroke-width="1.7"/><path d="m16 16 4.5 4.5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg></span><input id="homepage-search" name="q" type="search" class="bt-field min-h-12 pl-11" placeholder="Try “Laravel engineer” or “product design”" autocomplete="off"></div><button class="bt-button-primary min-h-12 sm:px-7" type="submit">Search opportunities <span class="ml-2" aria-hidden="true">→</span></button>
+                    <button class="bt-button-primary mt-2 min-h-12 w-full sm:mt-0 sm:w-auto sm:px-7" type="submit">Search jobs <span class="ml-2" aria-hidden="true">→</span></button>
                 </form>
-                <div class="mt-3 flex flex-wrap items-center gap-2 text-xs"><span class="mr-1 text-ink-500">Popular searches</span><a href="{{ route('jobs.index', ['q' => 'Laravel']) }}" class="bt-search-chip">Laravel</a><a href="{{ route('jobs.index', ['q' => 'Product']) }}" class="bt-search-chip">Product</a><a href="{{ route('jobs.index', ['q' => 'Data']) }}" class="bt-search-chip">Data & analytics</a><a href="{{ route('jobs.index', ['q' => 'Remote']) }}" class="bt-search-chip">Remote-friendly</a></div>
-            </div></div>
-        </section>
-
-        <section class="border-y border-line bg-[#F8FAF9] py-14 sm:py-20" aria-labelledby="pathways-heading">
-            <div class="bt-shell"><div class="mb-8 flex flex-col gap-3 sm:mb-10 sm:flex-row sm:items-end sm:justify-between"><div><p class="bt-eyebrow">A network with more than one way in</p><h2 id="pathways-heading" class="bt-section-title mt-2">Your work. Your next move.</h2></div><p class="max-w-md text-sm leading-6 text-ink-600">Careers, freelance projects, and hiring come together in one professional technology ecosystem.</p></div>
-                <div class="grid divide-y divide-line border-y border-line md:grid-cols-3 md:divide-x md:divide-y-0">
-                    <a href="{{ route('jobs.index') }}" class="bt-pathway group py-6 md:py-7 md:pr-7"><span class="bt-pathway-index">01 / CAREERS</span><span class="mt-5 flex items-start justify-between gap-4"><span><span class="block text-xl font-semibold tracking-tight">Find work with purpose.</span><span class="mt-2 block max-w-sm text-sm leading-6 text-ink-600">Explore technology roles from teams serious about what they’re building.</span></span><span class="bt-pathway-arrow" aria-hidden="true">↗</span></span><span class="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-brand-700">Explore open roles <span aria-hidden="true">→</span></span></a>
-                    <a href="{{ route('freelancers.index') }}" class="bt-pathway group py-6 md:px-7 md:py-7"><span class="bt-pathway-index">02 / INDEPENDENT WORK</span><span class="mt-5 flex items-start justify-between gap-4"><span><span class="block text-xl font-semibold tracking-tight">Make your expertise count.</span><span class="mt-2 block max-w-sm text-sm leading-6 text-ink-600">Find meaningful projects and show clients how you think, build, and deliver.</span></span><span class="bt-pathway-arrow" aria-hidden="true">↗</span></span><span class="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-brand-700">Discover freelance talent <span aria-hidden="true">→</span></span></a>
-                    <a href="{{ route('employer.jobs.index') }}" class="bt-pathway group py-6 md:py-7 md:pl-7"><span class="bt-pathway-index">03 / FOR EMPLOYERS</span><span class="mt-5 flex items-start justify-between gap-4"><span><span class="block text-xl font-semibold tracking-tight">Bring the right people closer.</span><span class="mt-2 block max-w-sm text-sm leading-6 text-ink-600">Hire for your next role, project, or stage of growth with confidence.</span></span><span class="bt-pathway-arrow" aria-hidden="true">↗</span></span><span class="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-brand-700">Build your team <span aria-hidden="true">→</span></span></a>
+                <div class="mt-3 flex flex-wrap items-center gap-2 text-xs">
+                    <span class="mr-1 text-ink-500">Popular:</span>
+                    <a href="{{ route('jobs.index', ['q' => 'Laravel']) }}" class="rounded-full border border-line bg-white/70 px-3 py-1.5 text-ink-700 transition hover:border-brand-100 hover:text-brand-700">Laravel</a>
+                    <a href="{{ route('jobs.index', ['q' => 'Product']) }}" class="rounded-full border border-line bg-white/70 px-3 py-1.5 text-ink-700 transition hover:border-brand-100 hover:text-brand-700">Product</a>
+                    <a href="{{ route('jobs.index', ['q' => 'Remote']) }}" class="rounded-full border border-line bg-white/70 px-3 py-1.5 text-ink-700 transition hover:border-brand-100 hover:text-brand-700">Remote</a>
                 </div>
             </div>
         </section>
 
-        <section class="bt-home-section" aria-labelledby="jobs-heading">
-            <div class="bt-shell"><div class="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between"><div><p class="bt-eyebrow">Opportunities with room to grow</p><h2 id="jobs-heading" class="bt-section-title mt-2">Work worth moving for.</h2><p class="mt-2 max-w-xl text-sm leading-6 text-ink-600">A considered selection of open roles from growing technology teams.</p></div><a href="{{ route('jobs.index') }}" class="inline-flex min-h-10 items-center gap-2 self-start text-sm font-semibold text-brand-700 hover:underline sm:self-auto">Explore all jobs <span aria-hidden="true">→</span></a></div>
-                @if($jobs->isNotEmpty())<div class="mt-7 divide-y divide-line border-y border-line">@foreach($jobs as $job)<article class="group grid gap-3 py-5 sm:grid-cols-[minmax(0,1fr)_auto] sm:items-center sm:gap-8"><div class="flex min-w-0 items-start gap-4"><x-company-logo :name="$job->company->name" size="md" :src="$job->company->logo_path ? \Illuminate\Support\Facades\Storage::disk('public')->url($job->company->logo_path) : null"/><div class="min-w-0"><h3 class="text-base font-semibold tracking-tight"><a class="hover:text-brand-700" href="{{ route('jobs.show', $job->slug) }}">{{ $job->title }}</a></h3><p class="mt-1 text-sm text-ink-600">{{ $job->company->name }}@if($job->location)<span class="mx-1.5 text-ink-300">·</span>{{ $job->location->name }}@endif</p><div class="mt-2 flex flex-wrap gap-x-3 gap-y-1 text-xs text-ink-500"><span>{{ $job->employment_type->label() }}</span><span>{{ $job->workplace_type->label() }}</span>@if($job->salary_min || $job->salary_max)<span>{{ $job->currency }} {{ $job->salary_min ?? '—' }}–{{ $job->salary_max ?? '—' }}</span>@endif</div></div></div><a href="{{ route('jobs.show', $job->slug) }}" class="inline-flex min-h-10 items-center gap-2 pl-14 text-sm font-semibold text-brand-700 sm:pl-0">View role <span class="transition-transform group-hover:translate-x-1" aria-hidden="true">→</span></a></article>@endforeach</div>@else<div class="mt-7 border-y border-line py-8 text-sm text-ink-600">New opportunities are on the way. <a href="{{ route('jobs.index') }}" class="font-semibold text-brand-700 underline">Browse the job board</a>.</div>@endif
+        <section class="bt-shell py-12 sm:py-16" aria-labelledby="pathways-heading">
+            <div class="mb-7 max-w-2xl">
+                <p class="bt-eyebrow">One network, three ways forward</p>
+                <h2 id="pathways-heading" class="bt-section-title mt-2">Choose your next move.</h2>
+            </div>
+            <div class="grid divide-y divide-line border-y border-line md:grid-cols-3 md:divide-x md:divide-y-0">
+                <a href="{{ route('jobs.index') }}" class="group py-5 md:pr-7 md:py-6">
+                    <span class="text-xs font-semibold tracking-[.12em] text-ink-400">01 / CAREERS</span>
+                    <span class="mt-3 flex items-center justify-between gap-4"><span class="text-lg font-semibold tracking-tight">Find a role that fits.</span><span class="text-ink-400 transition group-hover:translate-x-1 group-hover:text-brand-700" aria-hidden="true">→</span></span>
+                    <span class="mt-1.5 block text-sm leading-6 text-ink-600">Explore opportunities from technology teams.</span>
+                </a>
+                <a href="{{ route('freelancers.index') }}" class="group py-5 md:px-7 md:py-6">
+                    <span class="text-xs font-semibold tracking-[.12em] text-ink-400">02 / FREELANCE</span>
+                    <span class="mt-3 flex items-center justify-between gap-4"><span class="text-lg font-semibold tracking-tight">Find independent experts.</span><span class="text-ink-400 transition group-hover:translate-x-1 group-hover:text-brand-700" aria-hidden="true">→</span></span>
+                    <span class="mt-1.5 block text-sm leading-6 text-ink-600">Browse skilled professionals and their work.</span>
+                </a>
+                <a href="{{ route('register', ['account_type' => 'employer']) }}" class="group py-5 md:pl-7 md:py-6">
+                    <span class="text-xs font-semibold tracking-[.12em] text-ink-400">03 / HIRING</span>
+                    <span class="mt-3 flex items-center justify-between gap-4"><span class="text-lg font-semibold tracking-tight">Build your team.</span><span class="text-ink-400 transition group-hover:translate-x-1 group-hover:text-brand-700" aria-hidden="true">→</span></span>
+                    <span class="mt-1.5 block text-sm leading-6 text-ink-600">Find people for your next role or project.</span>
+                </a>
             </div>
         </section>
 
-        <section class="border-y border-line bg-[#F8FAF9] py-14 sm:py-20" aria-labelledby="freelancers-heading">
-            <div class="bt-shell"><div class="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between"><div><p class="bt-eyebrow">Independent by choice. Connected by craft.</p><h2 id="freelancers-heading" class="bt-section-title mt-2">People who make good work happen.</h2><p class="mt-2 max-w-xl text-sm leading-6 text-ink-600">Meet technology professionals through their craft, portfolio, and working style.</p></div><a href="{{ route('freelancers.index') }}" class="inline-flex min-h-10 items-center gap-2 self-start text-sm font-semibold text-brand-700 hover:underline sm:self-auto">Meet the network <span aria-hidden="true">→</span></a></div>
-                @if($freelancers->isNotEmpty())<div class="mt-8 grid gap-4 md:grid-cols-3">@foreach($freelancers as $freelancer)@php($profile = $freelancer->talentProfile)<article class="bt-person-card group"><div class="flex items-start gap-3.5"><div class="grid size-12 shrink-0 place-items-center overflow-hidden rounded-full bg-brand-100 text-lg font-semibold text-brand-700">@if($profile->photo_path)<img src="{{ route('talent.photo', $profile->user->public_id) }}" alt="" class="size-full object-cover">@else{{ mb_substr($profile->user->name, 0, 1) }}@endif</div><div class="min-w-0 flex-1"><div class="flex flex-wrap items-center gap-2"><h3 class="truncate font-semibold tracking-tight"><a href="{{ route('freelancers.show', $profile->profile_slug) }}" class="hover:text-brand-700">{{ $profile->user->name }}</a></h3>@if($freelancer->verification_status === \App\Enums\FreelancerVerificationStatus::Verified)<span class="text-xs font-semibold text-brand-700" title="Verified by M Talent">✓ Verified</span>@endif</div><p class="mt-1 line-clamp-2 text-sm leading-5 text-ink-600">{{ $profile->headline ?: 'Technology professional' }}</p></div></div><p class="mt-4 min-h-5 text-xs text-ink-500">{{ $profile->primaryLocation?->name ?? 'Location flexible' }}@if($freelancer->hourly_rate)<span class="mx-1.5">·</span>{{ \Illuminate\Support\Number::currency((float) $freelancer->hourly_rate, $freelancer->currency) }}/hr @endif</p>@if($profile->skills->isNotEmpty())<ul class="mt-4 flex flex-wrap gap-1.5" aria-label="Skills">@foreach($profile->skills->take(4) as $skill)<li class="rounded bg-slate-50 px-2 py-1 text-[11px] font-medium text-ink-700">{{ $skill->name }}</li>@endforeach</ul>@endif<div class="mt-5 border-t border-line pt-3"><a href="{{ route('freelancers.show', $profile->profile_slug) }}" class="text-sm font-semibold text-brand-700">Explore portfolio <span class="ml-1" aria-hidden="true">→</span></a></div></article>@endforeach</div>@else<div class="mt-8 border-t border-line pt-6 text-sm text-ink-600">Discover independent professionals in the <a class="font-semibold text-brand-700 underline" href="{{ route('freelancers.index') }}">freelancer directory</a>.</div>@endif
+        <section class="border-y border-line bg-[#f8faf9] py-12 sm:py-16" aria-labelledby="jobs-heading">
+            <div class="bt-shell">
+                <div class="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
+                    <div>
+                        <p class="bt-eyebrow">Featured opportunities</p>
+                        <h2 id="jobs-heading" class="bt-section-title mt-2">Good work is out there.</h2>
+                    </div>
+                    <a href="{{ route('jobs.index') }}" class="inline-flex min-h-10 items-center gap-2 self-start text-sm font-semibold text-brand-700 hover:underline sm:self-auto">Browse all jobs <span aria-hidden="true">→</span></a>
+                </div>
+                @if($jobs->isNotEmpty())
+                    <div class="mt-7 divide-y divide-line border-y border-line bg-white px-4 sm:px-6">
+                        @foreach($jobs as $job)
+                            <article class="group grid gap-3 py-5 sm:grid-cols-[minmax(0,1fr)_auto] sm:items-center sm:gap-8">
+                                <div class="flex min-w-0 items-start gap-4">
+                                    <x-company-logo :name="$job->company->name" size="md" :src="$job->company->logo_path ? \Illuminate\Support\Facades\Storage::disk('public')->url($job->company->logo_path) : null"/>
+                                    <div class="min-w-0">
+                                        <h3 class="text-base font-semibold tracking-tight"><a class="hover:text-brand-700" href="{{ route('jobs.show', $job->slug) }}">{{ $job->title }}</a></h3>
+                                        <p class="mt-1 text-sm text-ink-600">{{ $job->company->name }}@if($job->location)<span class="mx-1.5 text-ink-300">·</span>{{ $job->location->name }}@endif</p>
+                                        <div class="mt-2 flex flex-wrap gap-x-3 gap-y-1 text-xs text-ink-500"><span>{{ $job->employment_type->label() }}</span><span>{{ $job->workplace_type->label() }}</span>@if($job->salary_min || $job->salary_max)<span>{{ $job->currency }} {{ $job->salary_min ?? '—' }}–{{ $job->salary_max ?? '—' }}</span>@endif</div>
+                                    </div>
+                                </div>
+                                <a href="{{ route('jobs.show', $job->slug) }}" class="inline-flex min-h-9 items-center gap-2 pl-16 text-sm font-semibold text-brand-700 sm:pl-0">View role <span class="transition-transform group-hover:translate-x-1" aria-hidden="true">→</span></a>
+                            </article>
+                        @endforeach
+                    </div>
+                @else
+                    <p class="mt-7 border-y border-line bg-white px-5 py-6 text-sm text-ink-600">New opportunities are on the way. <a href="{{ route('jobs.index') }}" class="font-semibold text-brand-700 underline">Browse the job board</a>.</p>
+                @endif
             </div>
         </section>
 
-        <section class="bt-home-section" aria-labelledby="companies-heading">
-            <div class="bt-shell"><div class="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between"><div><p class="bt-eyebrow">Teams building what comes next</p><h2 id="companies-heading" class="bt-section-title mt-2">Get to know the companies.</h2></div><p class="max-w-md text-sm leading-6 text-ink-600">Explore the teams, ideas, and environments behind the opportunities.</p></div>
-                @if($companies->isNotEmpty())<div class="mt-8 grid gap-3 sm:grid-cols-2 lg:grid-cols-5">@foreach($companies as $company)<a href="{{ route('companies.show', $company->slug) }}" class="bt-company-link group"><x-company-logo :name="$company->name" size="md" :src="$company->logo_path ? \Illuminate\Support\Facades\Storage::disk('public')->url($company->logo_path) : null"/><span class="min-w-0"><span class="block truncate text-sm font-semibold group-hover:text-brand-700">{{ $company->name }}</span><span class="mt-1 block truncate text-xs text-ink-500">{{ $company->industry ?: ($company->headquarters?->name ?? 'Technology company') }}</span></span><span class="ml-auto text-ink-400 transition group-hover:translate-x-0.5 group-hover:text-brand-700" aria-hidden="true">↗</span></a>@endforeach</div>@else<div class="mt-8 border-y border-line py-7 text-sm text-ink-600">Discover companies and their open opportunities across the network.</div>@endif
-                <div class="mt-5"><a href="{{ route('jobs.index') }}" class="text-sm font-semibold text-brand-700 hover:underline">See teams hiring now <span aria-hidden="true">→</span></a></div>
+        <section class="bt-shell py-12 sm:py-16" aria-labelledby="freelancers-heading">
+            <div class="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
+                <div>
+                    <p class="bt-eyebrow">Independent talent</p>
+                    <h2 id="freelancers-heading" class="bt-section-title mt-2">Meet people who make things happen.</h2>
+                    <p class="mt-2 max-w-xl text-sm leading-6 text-ink-600">Explore professional portfolios, skills, and working styles.</p>
+                </div>
+                <a href="{{ route('freelancers.index') }}" class="inline-flex min-h-10 items-center gap-2 self-start text-sm font-semibold text-brand-700 hover:underline sm:self-auto">Browse freelancers <span aria-hidden="true">→</span></a>
+            </div>
+            @if($freelancers->isNotEmpty())
+                <div class="mt-7 grid gap-x-8 md:grid-cols-3">
+                    @foreach($freelancers as $freelancer)
+                        @php($profile = $freelancer->talentProfile)
+                        <article class="border-t border-line py-5 sm:py-6">
+                            <div class="flex items-start gap-3.5">
+                                <div class="grid size-12 shrink-0 place-items-center overflow-hidden rounded-full bg-brand-100 text-lg font-semibold text-brand-700">
+                                    @if($profile->photo_path)<img src="{{ route('talent.photo', $profile->user->public_id) }}" alt="" class="size-full object-cover">@else{{ mb_substr($profile->user->name, 0, 1) }}@endif
+                                </div>
+                                <div class="min-w-0 flex-1">
+                                    <div class="flex flex-wrap items-center gap-2">
+                                        <h3 class="truncate font-semibold tracking-tight"><a href="{{ route('freelancers.show', $profile->profile_slug) }}" class="hover:text-brand-700">{{ $profile->user->name }}</a></h3>
+                                        @if($freelancer->verification_status === \App\Enums\FreelancerVerificationStatus::Verified)<span class="text-xs font-semibold text-brand-700" title="Verified by MTalent">✓ Verified</span>@endif
+                                    </div>
+                                    <p class="mt-1 line-clamp-2 text-sm leading-5 text-ink-600">{{ $profile->headline ?: 'Technology professional' }}</p>
+                                </div>
+                            </div>
+                            <p class="mt-3 text-xs text-ink-500">{{ $profile->primaryLocation?->name ?? 'Location flexible' }}@if($freelancer->hourly_rate)<span class="mx-1.5">·</span>{{ \Illuminate\Support\Number::currency((float) $freelancer->hourly_rate, $freelancer->currency) }}/hr @endif</p>
+                            @if(($freelancer->approved_reviews_count ?? 0) > 0)<p class="mt-2 text-xs font-medium text-ink-700"><span class="text-amber-600" aria-hidden="true">★</span> {{ number_format((float) $freelancer->approved_reviews_avg_rating, 1) }} <span class="text-ink-500">({{ $freelancer->approved_reviews_count }} reviews)</span></p>@endif
+                            @if($profile->skills->isNotEmpty())
+                                <ul class="mt-3 flex flex-wrap gap-1.5" aria-label="Skills">@foreach($profile->skills->take(3) as $skill)<li class="rounded-full bg-slate-50 px-2.5 py-1 text-[11px] font-medium text-ink-700">{{ $skill->name }}</li>@endforeach</ul>
+                            @endif
+                            <a href="{{ route('freelancers.show', $profile->profile_slug) }}" class="mt-4 inline-flex min-h-8 items-center gap-2 text-sm font-semibold text-brand-700">View portfolio <span aria-hidden="true">→</span></a>
+                        </article>
+                    @endforeach
+                </div>
+            @else
+                <p class="mt-7 border-t border-line pt-5 text-sm text-ink-600">Explore independent professionals in the <a class="font-semibold text-brand-700 underline" href="{{ route('freelancers.index') }}">freelancer directory</a>.</p>
+            @endif
+        </section>
+
+        <section class="border-y border-line bg-[#f8faf9] py-12 sm:py-16" aria-labelledby="companies-heading">
+            <div class="bt-shell">
+                <div class="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
+                    <div><p class="bt-eyebrow">Teams building what comes next</p><h2 id="companies-heading" class="bt-section-title mt-2">Get to know the companies.</h2></div>
+                    <a href="{{ route('jobs.index') }}" class="inline-flex min-h-10 items-center gap-2 self-start text-sm font-semibold text-brand-700 hover:underline sm:self-auto">See open roles <span aria-hidden="true">→</span></a>
+                </div>
+                @if($companies->isNotEmpty())
+                    <div class="mt-6 grid gap-3 sm:grid-cols-2 lg:grid-cols-5">
+                        @foreach($companies as $company)
+                            <a href="{{ route('companies.show', $company->slug) }}" class="group flex min-w-0 items-center gap-3 rounded-lg border border-line bg-white p-3 transition hover:border-brand-100">
+                                <x-company-logo :name="$company->name" size="sm" :src="$company->logo_path ? \Illuminate\Support\Facades\Storage::disk('public')->url($company->logo_path) : null"/>
+                                <span class="min-w-0"><span class="block truncate text-sm font-semibold group-hover:text-brand-700">{{ $company->name }}</span><span class="mt-0.5 block truncate text-xs text-ink-500">{{ $company->industry ?: ($company->headquarters?->name ?? 'Technology company') }}</span></span>
+                            </a>
+                        @endforeach
+                    </div>
+                @else
+                    <p class="mt-6 border-t border-line pt-5 text-sm text-ink-600">Discover companies and their open opportunities across the network.</p>
+                @endif
             </div>
         </section>
 
-        <section class="bg-ink-950 py-14 text-white sm:py-20" aria-labelledby="trust-heading">
-            <div class="bt-shell grid gap-10 lg:grid-cols-[.9fr_1.1fr] lg:items-center"><div><p class="text-xs font-semibold tracking-[.14em] text-[#83C7B6] uppercase">Trust is part of the product</p><h2 id="trust-heading" class="mt-3 max-w-lg text-3xl leading-tight font-semibold tracking-[-.04em] sm:text-4xl">Professional connections, with confidence built in.</h2><p class="mt-4 max-w-lg text-sm leading-7 text-slate-300">Every good opportunity begins with clarity. M Talent brings structure to profiles, hiring, and project work so people can focus on the work ahead.</p><a href="{{ route('register') }}" class="mt-6 inline-flex min-h-11 items-center gap-2 text-sm font-semibold text-white hover:text-[#A9D9CE]">How verification works <span aria-hidden="true">→</span></a></div>
-                <div class="grid gap-x-8 gap-y-7 sm:grid-cols-2"><div class="border-t border-white/15 pt-4"><span class="text-sm font-semibold text-[#A9D9CE]">01</span><h3 class="mt-3 font-semibold">Credentials reviewed</h3><p class="mt-2 text-sm leading-6 text-slate-300">Verification adds clear, accountable trust signals to professional profiles and company pages.</p></div><div class="border-t border-white/15 pt-4"><span class="text-sm font-semibold text-[#A9D9CE]">02</span><h3 class="mt-3 font-semibold">Privacy by default</h3><p class="mt-2 text-sm leading-6 text-slate-300">People control their profile visibility. Private documents and conversations stay protected.</p></div><div class="border-t border-white/15 pt-4"><span class="text-sm font-semibold text-[#A9D9CE]">03</span><h3 class="mt-3 font-semibold">Work with context</h3><p class="mt-2 text-sm leading-6 text-slate-300">Applications, projects, and recruitment stay connected to the relationships that make them meaningful.</p></div><div class="border-t border-white/15 pt-4"><span class="text-sm font-semibold text-[#A9D9CE]">04</span><h3 class="mt-3 font-semibold">Decisions you can follow</h3><p class="mt-2 text-sm leading-6 text-slate-300">Clear stages and shared updates keep everyone aligned from first conversation to next step.</p></div></div>
+        <section id="how-it-works" class="scroll-mt-10 bg-ink-950 py-12 text-white sm:py-16" aria-labelledby="how-heading">
+            <div class="bt-shell">
+                <div class="grid gap-8 lg:grid-cols-[.8fr_1.2fr] lg:items-end">
+                    <div><p class="text-xs font-semibold uppercase tracking-[.14em] text-[#9bd2c6]">Clear at every step</p><h2 id="how-heading" class="mt-3 max-w-lg text-3xl font-semibold leading-tight tracking-[-.04em] sm:text-4xl">A professional network built on trust.</h2><p class="mt-3 max-w-lg text-sm leading-6 text-slate-300">Profiles, opportunities, and conversations stay connected, with privacy controls and verification built in.</p></div>
+                    <ol class="grid gap-5 sm:grid-cols-3">
+                        <li class="border-t border-white/20 pt-3"><span class="text-xs font-semibold text-[#9bd2c6]">01</span><h3 class="mt-2 font-semibold">Find your fit</h3><p class="mt-1.5 text-sm leading-6 text-slate-300">Search roles, portfolios, or talent.</p></li>
+                        <li class="border-t border-white/20 pt-3"><span class="text-xs font-semibold text-[#9bd2c6]">02</span><h3 class="mt-2 font-semibold">Start a conversation</h3><p class="mt-1.5 text-sm leading-6 text-slate-300">Apply or connect with context.</p></li>
+                        <li class="border-t border-white/20 pt-3"><span class="text-xs font-semibold text-[#9bd2c6]">03</span><h3 class="mt-2 font-semibold">Move forward</h3><p class="mt-1.5 text-sm leading-6 text-slate-300">Keep plans and next steps clear.</p></li>
+                    </ol>
+                </div>
             </div>
         </section>
 
-        <section id="how-it-works" class="bt-home-section scroll-mt-10" aria-labelledby="how-heading">
-            <div class="bt-shell"><div class="max-w-2xl"><p class="bt-eyebrow">A simpler path to good work</p><h2 id="how-heading" class="bt-section-title mt-2">A connection that keeps moving.</h2><p class="mt-3 text-sm leading-6 text-ink-600">From first search to a lasting working relationship, every step has a clear place.</p></div>
-                <ol class="bt-steps mt-9 grid gap-8 md:grid-cols-3"><li class="bt-step"><span class="bt-step-number">01</span><h3 class="mt-4 text-lg font-semibold tracking-tight">Find your fit</h3><p class="mt-2 max-w-sm text-sm leading-6 text-ink-600">Search roles, explore portfolios, or tell us what kind of team you’re building.</p></li><li class="bt-step"><span class="bt-step-number">02</span><h3 class="mt-4 text-lg font-semibold tracking-tight">Start with context</h3><p class="mt-2 max-w-sm text-sm leading-6 text-ink-600">Apply, share a proposal, and connect through a professional workspace.</p></li><li class="bt-step"><span class="bt-step-number">03</span><h3 class="mt-4 text-lg font-semibold tracking-tight">Make progress together</h3><p class="mt-2 max-w-sm text-sm leading-6 text-ink-600">Keep the work, decisions, and next steps clear as the relationship grows.</p></li></ol>
+        <section id="kerala" class="scroll-mt-10 border-b border-line py-10 sm:py-12" aria-labelledby="kerala-heading">
+            <div class="bt-shell flex flex-col gap-5 sm:flex-row sm:items-center sm:justify-between">
+                <div class="max-w-2xl"><p class="bt-eyebrow">Rooted in Kerala. Open to the world.</p><h2 id="kerala-heading" class="mt-2 text-xl font-semibold tracking-tight sm:text-2xl">Local roots. Global opportunity.</h2><p class="mt-2 text-sm leading-6 text-ink-600">Connecting Kerala’s technology community with careers, independent talent, and teams everywhere.</p></div>
+                <a href="{{ route('jobs.index') }}" class="inline-flex min-h-10 shrink-0 items-center gap-2 text-sm font-semibold text-brand-700 hover:underline">Explore opportunities <span aria-hidden="true">→</span></a>
             </div>
         </section>
 
-        <section id="kerala" class="scroll-mt-10 border-y border-line bg-[#F8FAF9] py-14 sm:py-20" aria-labelledby="kerala-heading">
-            <div class="bt-shell grid gap-9 lg:grid-cols-[1fr_.8fr] lg:items-center"><div><p class="bt-eyebrow">Rooted in Kerala. Open to the world.</p><h2 id="kerala-heading" class="bt-section-title mt-2 max-w-xl">A growing technology ecosystem with global ambition.</h2><p class="mt-4 max-w-2xl text-sm leading-7 text-ink-600">Kerala’s technology community is shaped by ambitious companies, skilled professionals, and a culture of learning. M Talent connects that momentum with opportunities and collaborators everywhere.</p><a class="mt-6 inline-flex min-h-10 items-center gap-2 text-sm font-semibold text-brand-700 hover:underline" href="{{ route('jobs.index') }}">Explore opportunities in Kerala <span aria-hidden="true">→</span></a></div>
-                <div class="bt-region-panel"><div class="flex items-start justify-between gap-4"><div><p class="text-xs font-semibold tracking-[.12em] text-brand-700 uppercase">Connected across the state</p><p class="mt-1 text-sm text-ink-600">Local roots. Worldwide possibilities.</p></div><span class="grid size-10 place-items-center rounded-xl bg-brand-50 text-brand-700" aria-hidden="true">◎</span></div><div class="bt-region-lines" aria-hidden="true"><span></span><span></span><span></span></div><div class="relative mt-8 grid grid-cols-3 gap-2 text-center"><div><span class="bt-region-dot"></span><p class="mt-2 text-xs font-semibold">Kochi</p><p class="mt-1 text-[10px] text-ink-500">Product & enterprise</p></div><div><span class="bt-region-dot"></span><p class="mt-2 text-xs font-semibold">Thiruvananthapuram</p><p class="mt-1 text-[10px] text-ink-500">Research & innovation</p></div><div><span class="bt-region-dot"></span><p class="mt-2 text-xs font-semibold">Kozhikode</p><p class="mt-1 text-[10px] text-ink-500">New ideas, growing teams</p></div></div></div>
+        <section class="bt-shell py-12 sm:py-16" aria-labelledby="cta-heading">
+            <div class="flex flex-col gap-6 rounded-2xl bg-brand-700 px-6 py-8 text-white sm:flex-row sm:items-center sm:justify-between sm:px-9 sm:py-9">
+                <div class="max-w-2xl"><p class="text-xs font-semibold uppercase tracking-[.14em] text-white/70">Your next move starts here</p><h2 id="cta-heading" class="mt-2 text-2xl font-semibold leading-tight tracking-[-.035em] sm:text-3xl">Make the connection that moves you forward.</h2></div>
+                <div class="flex shrink-0 flex-wrap gap-3"><a href="{{ route('register') }}" class="inline-flex min-h-11 items-center justify-center rounded-md bg-white px-4 py-2 text-sm font-semibold text-brand-700 transition hover:bg-brand-50">Create your profile</a><a href="{{ route('register', ['account_type' => 'employer']) }}" class="inline-flex min-h-11 items-center justify-center rounded-md border border-white/40 px-4 py-2 text-sm font-semibold text-white transition hover:bg-white/10">Hire talent</a></div>
             </div>
-        </section>
-
-        <section class="bt-home-section" aria-label="Get started with M Talent">
-            <div class="bt-shell grid gap-4 lg:grid-cols-2"><article class="bt-cta-panel bg-brand-700 text-white"><p class="text-xs font-semibold tracking-[.14em] text-white/70 uppercase">For employers</p><h2 class="mt-3 max-w-lg text-2xl leading-tight font-semibold tracking-[-.035em] sm:text-3xl">Bring your next great hire into focus.</h2><p class="mt-3 max-w-lg text-sm leading-6 text-white/80">Find experienced technology professionals, discover independent talent, and build a team for what’s next.</p><div class="mt-6 flex flex-wrap gap-3"><a href="{{ route('register', ['account_type' => 'employer']) }}" class="bt-cta-light">Hire talent <span aria-hidden="true">→</span></a><a href="{{ route('freelancers.index') }}" class="bt-cta-outline">Explore freelancers</a></div></article><article class="bt-cta-panel bg-[#F4F6F4]"><p class="text-xs font-semibold tracking-[.14em] text-brand-700 uppercase">For candidates & freelancers</p><h2 class="mt-3 max-w-lg text-2xl leading-tight font-semibold tracking-[-.035em] text-ink-950 sm:text-3xl">Make your next move a meaningful one.</h2><p class="mt-3 max-w-lg text-sm leading-6 text-ink-600">Find work that fits your ambitions, build a portfolio that reflects your craft, and connect with teams that value it.</p><div class="mt-6 flex flex-wrap gap-3"><a href="{{ route('jobs.index') }}" class="bt-button-primary">Find a job <span class="ml-2" aria-hidden="true">→</span></a><a href="{{ route('register') }}" class="bt-button-secondary">Create your profile</a></div></article></div>
         </section>
     </main>
 
     <footer class="border-t border-line bg-white">
-        <div class="bt-shell grid gap-9 py-10 sm:py-12 lg:grid-cols-[1fr_auto] lg:items-end"><div><a href="{{ route('home') }}" class="inline-flex items-center gap-2.5"><span class="grid size-8 place-items-center rounded-lg bg-brand-700 text-sm font-semibold text-white">M</span><span class="font-semibold tracking-tight">MTalent</span></a><p class="mt-3 max-w-md text-sm leading-6 text-ink-500">A professional network connecting technology careers, independent talent, and the teams building what comes next.</p><p class="mt-4 text-xs text-ink-400">© {{ now()->year }} MTalent</p></div><nav class="grid grid-cols-2 gap-x-10 gap-y-3 text-sm sm:grid-cols-4 lg:gap-8" aria-label="Footer navigation"><a class="text-ink-600 hover:text-brand-700" href="{{ route('jobs.index') }}">Find a job</a><a class="text-ink-600 hover:text-brand-700" href="{{ route('freelancers.index') }}">Freelancers</a><a class="text-ink-600 hover:text-brand-700" href="{{ route('employer.jobs.index') }}">For employers</a><a class="text-ink-600 hover:text-brand-700" href="{{ route('register') }}">Create an account</a></nav></div>
+        <div class="bt-shell flex flex-col gap-6 py-7 sm:flex-row sm:items-center sm:justify-between">
+            <div><a href="{{ route('home') }}" class="inline-flex items-center gap-2.5" aria-label="MTalent home"><span class="grid size-8 place-items-center rounded-lg bg-brand-700 text-sm font-semibold text-white">M</span><span class="font-semibold tracking-tight">MTalent</span></a><p class="mt-2 text-xs text-ink-500">© {{ now()->year }} MTalent. Technology careers, talent, and freelance work.</p></div>
+            <nav class="flex flex-wrap gap-x-6 gap-y-2 text-sm text-ink-600" aria-label="Footer navigation"><a class="hover:text-brand-700" href="{{ route('jobs.index') }}">Find a job</a><a class="hover:text-brand-700" href="{{ route('freelancers.index') }}">Freelancers</a><a class="hover:text-brand-700" href="{{ route('employer.jobs.index') }}">For employers</a><a class="hover:text-brand-700" href="{{ route('register') }}">Create an account</a></nav>
+        </div>
     </footer>
 </body>
 </html>
